@@ -1,0 +1,14 @@
+{
+  "name": "agence-immo",
+  "version": "1.0.0",
+  "description": "Brief three",
+  "main": "index.html",
+  "scripts": {
+    "watch": "sass --watch ./public/styles/scss/style.scss:./public/styles/css/style.css"
+  },
+  "author": "M0orph3us",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.71.0"
+  }
+}
