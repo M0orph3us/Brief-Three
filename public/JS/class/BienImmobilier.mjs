@@ -5,17 +5,19 @@ export class BienImmobilier {
   description;
   price;
   location;
+  m2;
 
   // constructor
-  constructor(title, description, price, location) {
+  constructor(title, description, price, location, m2) {
     this.#id = crypto.randomUUID();
     this.title = title;
     this.description = description;
     this.price = price;
     this.location = location;
+    this.m2 = m2;
   }
 
-  // Setters & Getters
+  // setters & getters
 
   get id() {
     return this.#id;
@@ -50,6 +52,13 @@ export class BienImmobilier {
   }
   set location(location) {
     this.location = location;
+  }
+
+  get m2() {
+    return this.m2;
+  }
+  set m2(m2) {
+    this.m2 = m2;
   }
 
   // methods

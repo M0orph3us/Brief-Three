@@ -1,9 +1,9 @@
 export class Users {
-  #pseudo;
+  #mail;
   #password;
 
-  constructor(pseudo, password) {
-    this.#pseudo = pseudo;
+  constructor(mail, password) {
+    this.#mail = mail;
     this.#password = password;
   }
 
@@ -16,12 +16,12 @@ export class Users {
     };
 
     const userDataStringify = JSON.stringify(userData);
-    localStorage.setItem(this.#pseudo, userDataStringify);
+    localStorage.setItem(this.#mail, userDataStringify);
   }
 
   login() {
     let isConnected = false;
-    const storageGet = localStorage.getItem(this.#pseudo);
+    const storageGet = localStorage.getItem(this.#mail);
     const storageGetParse = JSON.parse(storageGet);
     const passwordStorage = storageGetParse.password;
     if (this.#password === passwordStorage) {

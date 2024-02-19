@@ -6,6 +6,6 @@ class Appartement extends BienImmobilier {
   constructor() {
     super();
   }
-  //   Setters & Getters
+  //   setters & getters
   //   methods
 }

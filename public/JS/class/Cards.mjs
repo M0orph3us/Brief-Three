@@ -8,7 +8,7 @@ export class Cards {
     this.#description = description;
   }
 
-  // Setters & Getters
+  // setters & getters
 
   // methods
   createCard() {}

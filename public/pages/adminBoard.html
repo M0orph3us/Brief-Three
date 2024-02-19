@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
+    <meta name="description" content="admin board for user" />
     <link
       rel="shortcut icon"
       href="/public/assets/icons/maison.ico"
@@ -18,8 +18,57 @@
     <title>Admin Board</title>
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <div class="logo-container">
+        <a href="/public/pages/home.html">
+          <img src="/public/assets/icons/home.svg" alt="logo" class="logo" />
+        </a>
+      </div>
+      <div class="navbar-container" id="navbar-container">
+        <ul class="navbar" id="nabar">
+          <li><a href="/public/pages/home.html">home</a></li>
+          <li><a href="/public/pages/new-property.html">new property</a></li>
+        </ul>
+      </div>
+      <div class="profil-container" id="profil-container">
+        <ul>
+          <!-- <li class="login" id="login">login</li>
+          <li class="register" id="register">register</li> -->
+          <li class="adminboard-link" id="adminboard-link">
+            <a href="/public/pages/adminBoard.html">admin board</a>
+          </li>
+          <li class="logout-container" id="logout-container">
+            <img
+              class="logout"
+              id="logout"
+              src="/public/assets/icons/logout.svg"
+              alt="logout"
+            />
+          </li>
+        </ul>
+      </div>
+      <div class="burger-container" id="burger-container">
+        <img
+          src="/public/assets/icons/burgerMenu.svg"
+          alt="burger menu"
+          class="burger-open"
+          id="burger-open"
+        />
+        <div class="burger-menu" id="burger-menu">
+          <img
+            src="/public/assets/icons/X.svg"
+            alt="close burger menu"
+            class="burger-close"
+            id="burger-close"
+          />
+          <ul>
+            <li><a href="/public/pages/home.html">home</a></li>
+            <li><a href="/public/pages/new-property.html">new property</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="admin-container" id="admin-container"></main>
     <footer></footer>
   </body>
 </html>
