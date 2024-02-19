@@ -8,6 +8,7 @@
   },
   "author": "M0orph3us",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
     "sass": "^1.71.0"
   }
