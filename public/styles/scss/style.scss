@@ -77,7 +77,33 @@ body {
 }
 
 /*////////////////////////////////////HEADER////////////////////////////////////////////*/
+.navbar-container {
+  display: none;
+}
 
+.burger-container {
+  display: none;
+}
+
+.profil-container {
+  display: none;
+}
+
+.user-profil-desktop {
+  display: none;
+}
+
+.register-modal {
+  display: block;
+}
+
+.login-modal {
+  display: block;
+}
+
+.adminboard-link {
+  display: none;
+}
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
 
 main {

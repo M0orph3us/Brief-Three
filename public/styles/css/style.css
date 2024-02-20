@@ -74,6 +74,34 @@ body {
 }
 
 /*////////////////////////////////////HEADER////////////////////////////////////////////*/
+.navbar-container {
+  display: none;
+}
+
+.burger-container {
+  display: none;
+}
+
+.profil-container {
+  display: none;
+}
+
+.user-profil-desktop {
+  display: none;
+}
+
+.register-modal {
+  display: block;
+}
+
+.login-modal {
+  display: block;
+}
+
+.adminboard-link {
+  display: none;
+}
+
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
 main {
   flex: 1;
@@ -85,6 +113,24 @@ main {
   :root {
     font-size: 16px;
   }
+  /*////////////////////////////////////HEADER////////////////////////////////////////////*/
+  .navbar-container {
+    display: block;
+  }
+  .burger-container {
+    display: none;
+  }
+  .burger-open {
+    display: none;
+  }
+  .user-profil-desktop {
+    display: block;
+  }
+  .user-profil-mobil {
+    display: none;
+  }
+  /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
+  /*////////////////////////////////////FOOTER////////////////////////////////////////////*/
 }
 
 /*# sourceMappingURL=style.css.map */
