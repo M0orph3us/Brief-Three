@@ -1,80 +1,75 @@
 import { Users } from "../class/Users.mjs";
 
-const btnRegister = document.querySelector("#btn-register");
+// const btnRegister = document.querySelector("#btn-register");
 
-const alertTarget = document.querySelector("#register-modal");
-
-btnRegister.addEventListener("click", register);
+// btnRegister.addEventListener("click", register);
 
 export function register() {
-  const emailValue = document.querySelector("#email-register").value;
-  const passwordValue = document.querySelector("#password-register").value;
-  const password2Value = document.querySelector("#password2-register").value;
+  function alert(text, alertClass = "error") {
+    const existingAlerts = document.querySelectorAll("#alertRegister");
+    existingAlerts.forEach((alert) => alert.remove());
+    const para = document.createElement("p");
+    para.classList.add(alertClass);
+    para.id = "alertRegister";
+    para.textContent = text;
+    alertRegisterTarget.prepend(para);
+  }
+  const alertRegisterTarget = document.querySelector("#register-modal");
+  const emailRegisterValue = document.querySelector("#email-register").value;
+  const passwordRegisterValue =
+    document.querySelector("#password-register").value;
+  const password2RegisterValue = document.querySelector(
+    "#password2-register"
+  ).value;
 
   const patternMail = /\@/;
   const regexMail = new RegExp(patternMail);
-  const checkFormatMail = regexMail.test(emailValue);
+  const checkFormatMail = regexMail.test(emailRegisterValue);
 
-  const patternPassword = "";
+  const patternPassword =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
   const regexPassword = new RegExp(patternPassword);
-  const checkFormatPassword = regexPassword.test(passwordValue);
-  const checkFormatPassword2 = regexPassword.test(password2Value);
+  const checkFormatPassword = regexPassword.test(passwordRegisterValue);
 
-  if (emailValue === "") {
-    const para = document.createElement("p");
-    para.textContent = "";
-    para.classList.add("alert");
-    para.textContent = "Your email address cannot be empty";
-    alertTarget.prepend(para);
+  if (emailRegisterValue === "") {
+    const text = "Your email address cannot be empty";
+    alert(text);
+  } else if (!checkFormatMail) {
+    const text = "Your email address is not in the correct format";
+    alert(text);
+  } else if (!checkFormatPassword) {
+    const text =
+      "Your password must contain at least one capital letter, 1 number and 1 special character (@, $, !, %, *, ?, &)";
+    alert(text);
+  } else if (passwordRegisterValue.length < 6) {
+    const text = "Your password must contain at least 6 characters";
+    alert(text);
+    // } else if (password2RegisterValue.length < 6) {
+    //   const text = "Your second password must contain at least 6 characters";
+    //   alert(text);
+  } else if (password2RegisterValue !== passwordRegisterValue) {
+    const text = "Your second password does not match the first";
+    alert(text);
   }
 
-  if (!checkFormatMail) {
-    const para = document.createElement("p");
-    para.textContent = "";
-    para.classList.add("alert");
-    para.textContent = "Your email address is not in the correct format";
-    alertTarget.prepend(para);
-  }
-
-  if (passwordValue.length < 6) {
-    const para = document.createElement("p");
-    para.textContent = "";
-    para.classList.add("alert");
-    para.textContent = "Your password must contain at least 6 characters";
-    alertTarget.prepend(para);
-  }
-
-  if (password2Value.length < 6) {
-    const para = document.createElement("p");
-    para.textContent = "";
-    para.classList.add("alert");
-    para.textContent =
-      "Your second password must contain at least 6 characters";
-    alertTarget.prepend(para);
-  }
-
-  if (password2Value !== passwordValue) {
-    const para = document.createElement("p");
-    para.textContent = "";
-    para.classList.add("alert");
-    para.textContent = "Your second password does not match the first";
-    alertTarget.prepend(para);
-  }
   let password = "";
   if (
-    emailValue !== "" &&
+    emailRegisterValue !== "" &&
     checkFormatMail &&
-    passwordValue.length > 6 &&
-    password2Value.length > 6 &&
-    password2Value === passwordValue
+    checkFormatPassword &&
+    passwordRegisterValue.length > 6 &&
+    // password2RegisterValue.length > 6 &&
+    password2RegisterValue === passwordRegisterValue
   ) {
-    password = passwordValue;
-    const newUser = new Users(emailValue, password);
-    newUser.register();
-    const para = document.createElement("p");
-    para.textContent = "";
-    para.classList.add("alert");
-    para.textContent = `Hello ${emailValue}, you are registered`;
-    alertTarget.prepend(para);
+    password = passwordRegisterValue;
+    const newUser = new Users(emailRegisterValue, password);
+    if (newUser.checkUserMailExist()) {
+      const text = `An account with this email ${emailRegisterValue} address already exists`;
+      alert(text);
+    } else {
+      newUser.register();
+      const text = `Hello ${emailRegisterValue}, you're registered`;
+      alert(text, "valid");
+    }
   }
 }

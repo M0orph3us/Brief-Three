@@ -19,6 +19,17 @@ export class Users {
     localStorage.setItem(this.#mail, userDataStringify);
   }
 
+  checkUserMailExist() {
+    for (let k = 0; k < localStorage.length; k++) {
+      const user = localStorage.key(k);
+      if (user === this.#mail) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
   login() {
     let isConnected = false;
     const storageGet = localStorage.getItem(this.#mail);
@@ -26,6 +37,8 @@ export class Users {
     const passwordStorage = storageGetParse.password;
     if (this.#password === passwordStorage) {
       isConnected = true;
+      return isConnected;
+    } else {
       return isConnected;
     }
   }
