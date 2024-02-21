@@ -67,12 +67,13 @@ body {
   height: 100dvh;
 }
 
-/*///////////////////////////////IMPORT TEMPLATE/////////////////////////////////////*/
 /*///////////////////////////////RESPONSIVE MOBIL///////////////////////////////////////*/
 :root {
   font-size: 20px;
+  /* attribuer var en css --couleur-principal: black; */
 }
 
+/* attribuer var en scss $primary-color: #3498db; */
 /*////////////////////////////////////HEADER////////////////////////////////////////////*/
 .navbar-container {
   display: none;
@@ -83,11 +84,11 @@ body {
 }
 
 .profil-container {
-  display: none;
+  display: block;
 }
 
-.user-profil-desktop {
-  display: none;
+.user-profil-icon {
+  display: block;
 }
 
 .register-modal {
@@ -96,10 +97,6 @@ body {
 
 .login-modal {
   display: block;
-}
-
-.adminboard-link {
-  display: none;
 }
 
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
@@ -121,12 +118,6 @@ main {
     display: none;
   }
   .burger-open {
-    display: none;
-  }
-  .user-profil-desktop {
-    display: block;
-  }
-  .user-profil-mobil {
     display: none;
   }
   /*////////////////////////////////////MAIN//////////////////////////////////////////////*/

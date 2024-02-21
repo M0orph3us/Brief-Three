@@ -18,6 +18,12 @@
   </head>
   <body>
     <header>
+      <img
+        src="/public/assets/icons/burgerMenu.svg"
+        alt="open burger menu"
+        class="burger-open"
+        id="burger-open"
+      />
       <div class="logo-container">
         <a href="/public/pages/home.html">
           <img src="/public/assets/imgs/home.svg" alt="logo" class="logo" />
@@ -29,30 +35,103 @@
           <li><a href="/public/pages/new-property.html">new property</a></li>
         </ul>
       </div>
+      <img
+        class="user-profil-icon"
+        id="user-profil-icon"
+        src="/public/assets/icons/user.svg"
+        alt="user options"
+      />
       <div class="profil-container" id="profil-container">
         <ul>
           <li class="login" id="login">login</li>
           <li class="register" id="register">register</li>
-          <li class="adminboard-link" id="adminboard-link">
-            <a href="/public/pages/adminBoard.html">admin board</a>
-          </li>
-          <li class="logout-container" id="logout-container">
-            <img
-              class="logout"
-              id="logout"
-              src="/public/assets/icons/logout.svg"
-              alt="logout"
-            />
-          </li>
+          <li class="adminboard-container" id="adminboard-container"></li>
+          <li class="logout-container" id="logout-container"></li>
         </ul>
       </div>
+      <div class="register-modal" id="register-modal">
+        <form class="form-register" id="form-register" action="#" method="post">
+          <label for="email-register">Email</label>
+          <input
+            type="email"
+            name="email-register"
+            id="email-register"
+            required
+          />
+          <div class="password-register-container">
+            <label for="password-register">Password</label>
+            <input
+              type="password"
+              name="password-register"
+              id="password-register"
+              required
+            />
+            <img
+              src="/public/assets/icons/eyeClose.svg"
+              alt="to show your password"
+              class="eye-close-register"
+              id="eye-close-register"
+            />
+            <img
+              src="/public/assets/icons/eyeOpen.svg"
+              alt="to hide your password"
+              class="eye-open-register"
+              id="eye-open-register"
+            />
+          </div>
+          <div class="password2-register-container">
+            <label for="password2-register">Enter your password again</label>
+            <input
+              type="password"
+              name="password2-register"
+              id="password2-register"
+              required
+            />
+            <img
+              src="/public/assets/icons/eyeClose.svg"
+              alt="to show your password"
+              class="eye-close-register2"
+              id="eye-close-register2"
+            />
+            <img
+              src="/public/assets/icons/eyeOpen.svg"
+              alt="to hide your password"
+              class="eye-open-register2"
+              id="eye-open-register2"
+            />
+          </div>
+          <button type="button" id="btn-register">Register</button>
+        </form>
+      </div>
+      <div class="login-modal" id="login-modal">
+        <form class="form-login" id="form-login" action="#" method="post">
+          <label for="email-login">Email</label>
+          <input type="email" name="email-login" id="email-login" required />
+          <div class="password-login-container">
+            <label for="password-login">Password</label>
+            <input
+              type="password"
+              name="password-login"
+              id="password-login"
+              required
+            />
+            <img
+              src="/public/assets/icons/eyeClose.svg"
+              alt="to show your password"
+              class="eye-close-login"
+              id="eye-close-login"
+            />
+            <img
+              src="/public/assets/icons/eyeOpen.svg"
+              alt="to hide your password"
+              class="eye-open-login"
+              id="eye-open-login"
+            />
+          </div>
+          <button type="button" id="btn-login">Login</button>
+        </form>
+      </div>
       <div class="burger-container" id="burger-container">
-        <img
-          src="/public/assets/icons/burgerMenu.svg"
-          alt="burger menu"
-          class="burger-open"
-          id="burger-open"
-        />
         <div class="burger-menu" id="burger-menu">
           <img
             src="/public/assets/icons/X.svg"

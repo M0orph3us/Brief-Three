@@ -5,6 +5,8 @@ export class Users {
   constructor(mail, password) {
     this.#mail = mail;
     this.#password = password;
+
+    this.register();
   }
 
   register() {
@@ -13,6 +15,7 @@ export class Users {
     const userData = {
       password: this.#password,
       createdAt: currentDate,
+      isConnected: false,
     };
 
     const userDataStringify = JSON.stringify(userData);
@@ -24,22 +27,22 @@ export class Users {
       const user = localStorage.key(k);
       if (user === this.#mail) {
         return true;
-      } else {
-        return false;
       }
     }
+    return false;
   }
 
   login() {
-    let isConnected = false;
-    const storageGet = localStorage.getItem(this.#mail);
-    const storageGetParse = JSON.parse(storageGet);
-    const passwordStorage = storageGetParse.password;
-    if (this.#password === passwordStorage) {
-      isConnected = true;
-      return isConnected;
-    } else {
-      return isConnected;
+    if (this.checkUserMailExist()) {
+      const storageGet = localStorage.getItem(this.#mail);
+      const storageGetParse = JSON.parse(storageGet);
+      const passwordStorage = storageGetParse.password;
+      if (this.#password === passwordStorage) {
+        storageGetParse.isConnected = true;
+        const userDataStringify = JSON.stringify(storageGetParse);
+        localStorage.setItem(this.#mail, userDataStringify);
+        return true;
+      }
     }
   }
 }

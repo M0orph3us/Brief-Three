@@ -1,20 +1,19 @@
 import { Users } from "../class/Users.mjs";
 
-// const btnRegister = document.querySelector("#btn-register");
-
-// btnRegister.addEventListener("click", register);
-
 export function register() {
   function alert(text, alertClass = "error") {
+    const alertRegisterTarget = document.querySelector("#register-modal");
     const existingAlerts = document.querySelectorAll("#alertRegister");
-    existingAlerts.forEach((alert) => alert.remove());
+    if (existingAlerts !== null) {
+      existingAlerts.forEach((alert) => alert.remove());
+    }
     const para = document.createElement("p");
     para.classList.add(alertClass);
     para.id = "alertRegister";
     para.textContent = text;
     alertRegisterTarget.prepend(para);
   }
-  const alertRegisterTarget = document.querySelector("#register-modal");
+
   const emailRegisterValue = document.querySelector("#email-register").value;
   const passwordRegisterValue =
     document.querySelector("#password-register").value;
@@ -39,26 +38,22 @@ export function register() {
     alert(text);
   } else if (!checkFormatPassword) {
     const text =
-      "Your password must contain at least one capital letter, 1 number and 1 special character (@, $, !, %, *, ?, &)";
+      "Your password must contain at least one capital letter, one number and one special character (@, $, !, %, *, ?, &)";
     alert(text);
   } else if (passwordRegisterValue.length < 6) {
     const text = "Your password must contain at least 6 characters";
     alert(text);
-    // } else if (password2RegisterValue.length < 6) {
-    //   const text = "Your second password must contain at least 6 characters";
-    //   alert(text);
   } else if (password2RegisterValue !== passwordRegisterValue) {
     const text = "Your second password does not match the first";
     alert(text);
   }
 
-  let password = "";
+  let password;
   if (
     emailRegisterValue !== "" &&
     checkFormatMail &&
     checkFormatPassword &&
     passwordRegisterValue.length > 6 &&
-    // password2RegisterValue.length > 6 &&
     password2RegisterValue === passwordRegisterValue
   ) {
     password = passwordRegisterValue;
