@@ -1,4 +1,14 @@
 "use strict";
+const checkLocalStorage = localStorage.getItem("products");
+if (checkLocalStorage === null) {
+  const data = {
+    maisons: [],
+    appartements: [],
+    terrains: [],
+  };
+  const dataStringify = JSON.stringify(data);
+  localStorage.setItem("products", dataStringify);
+}
 
 import { register } from "./scripts/register.mjs";
 const btnRegister = document.querySelector("#btn-register");
