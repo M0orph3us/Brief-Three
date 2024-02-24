@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="add new property" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
       rel="shortcut icon"
       href="/public/assets/icons/maison.ico"
       type="image/x-icon"
@@ -18,12 +22,11 @@
   </head>
   <body>
     <header>
-      <img
-        src="/public/assets/icons/burgerMenu.svg"
+      <i
+        class="fa-solid fa-bars fa-sm"
         alt="open burger menu"
-        class="burger-open"
         id="burger-open"
-      />
+      ></i>
       <div class="logo-container">
         <a href="/public/pages/home.html">
           <img src="/public/assets/imgs/home.svg" alt="logo" class="logo" />
@@ -35,12 +38,11 @@
           <li><a href="/public/pages/new-property.html">new property</a></li>
         </ul>
       </div>
-      <img
-        class="user-profil-icon"
+      <i
+        class="fa-solid fa-user fa-sm"
         id="user-profil-icon"
-        src="/public/assets/icons/user.svg"
         alt="user options"
-      />
+      ></i>
       <div class="profil-container" id="profil-container">
         <ul>
           <li class="login" id="login">login</li>
@@ -66,18 +68,16 @@
               id="password-register"
               required
             />
-            <img
-              src="/public/assets/icons/eyeClose.svg"
+            <i
+              class="fa-solid fa-eye-slash fa-sm"
               alt="to show your password"
-              class="eye-close-register"
               id="eye-close-register"
-            />
-            <img
-              src="/public/assets/icons/eyeOpen.svg"
+            ></i>
+            <i
+              class="fa-solid fa-eye fa-sm"
               alt="to hide your password"
-              class="eye-open-register"
               id="eye-open-register"
-            />
+            ></i>
           </div>
           <div class="password2-register-container">
             <label for="password2-register">Enter your password again</label>
@@ -87,18 +87,16 @@
               id="password2-register"
               required
             />
-            <img
-              src="/public/assets/icons/eyeClose.svg"
+            <i
+              class="fa-solid fa-eye-slash fa-sm"
               alt="to show your password"
-              class="eye-close-register2"
               id="eye-close-register2"
-            />
-            <img
-              src="/public/assets/icons/eyeOpen.svg"
+            ></i>
+            <i
+              class="fa-solid fa-eye fa-sm"
               alt="to hide your password"
-              class="eye-open-register2"
               id="eye-open-register2"
-            />
+            ></i>
           </div>
           <button type="button" id="btn-register">Register</button>
         </form>
@@ -115,30 +113,27 @@
               id="password-login"
               required
             />
-            <img
-              src="/public/assets/icons/eyeClose.svg"
+            <i
+              class="fa-solid fa-eye-slash fa-sm"
               alt="to show your password"
-              class="eye-close-login"
               id="eye-close-login"
-            />
-            <img
-              src="/public/assets/icons/eyeOpen.svg"
+            ></i>
+            <i
+              class="fa-solid fa-eye fa-sm"
               alt="to hide your password"
-              class="eye-open-login"
               id="eye-open-login"
-            />
+            ></i>
           </div>
           <button type="button" id="btn-login">Login</button>
         </form>
       </div>
       <div class="burger-container" id="burger-container">
         <div class="burger-menu" id="burger-menu">
-          <img
-            src="/public/assets/icons/X.svg"
+          <i
+            class="fa-solid fa-x fa-sm"
             alt="close burger menu"
-            class="burger-close"
             id="burger-close"
-          />
+          ></i>
           <ul>
             <li><a href="/public/pages/home.html">home</a></li>
             <li><a href="/public/pages/new-property.html">new property</a></li>
