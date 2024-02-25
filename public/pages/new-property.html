@@ -10,7 +10,7 @@
     />
     <link
       rel="shortcut icon"
-      href="/public/assets/icons/maison.ico"
+      href="/public/assets/imgs/favicon.ico"
       type="image/x-icon"
     />
     <link
@@ -22,34 +22,41 @@
   </head>
   <body>
     <header>
-      <i
-        class="fa-solid fa-bars fa-sm"
-        alt="open burger menu"
-        id="burger-open"
-      ></i>
-      <div class="logo-container">
-        <a href="/public/pages/home.html">
-          <img src="/public/assets/imgs/home.svg" alt="logo" class="logo" />
-        </a>
-      </div>
-      <div class="navbar-container" id="navbar-container">
-        <ul class="navbar" id="nabar">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/public/pages/home.html">
+            <img
+              src="/public/assets/imgs/logo.svg"
+              alt="logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <ul class="links">
           <li><a href="/public/pages/home.html">home</a></li>
           <li><a href="/public/pages/new-property.html">new property</a></li>
         </ul>
+        <div class="btn-connection">
+          <button type="button" class="btn-login" id="btn-login">login</button>
+          <button type="button" class="btn-register" id="btn-register">
+            register
+          </button>
+        </div>
+        <i class="fa-solid fa-bars burger-menu-open" id="burger-menu-open"></i>
+        <i class="fa-solid fa-user user" id="user"></i>
       </div>
-      <i
-        class="fa-solid fa-user fa-sm"
-        id="user-profil-icon"
-        alt="user options"
-      ></i>
-      <div class="profil-container" id="profil-container">
-        <ul>
-          <li class="login" id="login">login</li>
-          <li class="register" id="register">register</li>
-          <li class="adminboard-container" id="adminboard-container"></li>
-          <li class="logout-container" id="logout-container"></li>
-        </ul>
+      <div class="burger-container" id="burger-container">
+        <div class="burger-menu" id="burger-menu">
+          <i
+            class="fa-solid fa-x fa-sm"
+            alt="close burger menu"
+            id="burger-close"
+          ></i>
+          <ul>
+            <li><a href="/public/pages/home.html">home</a></li>
+            <li><a href="/public/pages/new-property.html">new property</a></li>
+          </ul>
+        </div>
       </div>
       <div class="register-modal" id="register-modal">
         <form class="form-register" id="form-register" action="#" method="post">
@@ -126,19 +133,6 @@
           </div>
           <button type="button" id="btn-login">Login</button>
         </form>
-      </div>
-      <div class="burger-container" id="burger-container">
-        <div class="burger-menu" id="burger-menu">
-          <i
-            class="fa-solid fa-x fa-sm"
-            alt="close burger menu"
-            id="burger-close"
-          ></i>
-          <ul>
-            <li><a href="/public/pages/home.html">home</a></li>
-            <li><a href="/public/pages/new-property.html">new property</a></li>
-          </ul>
-        </div>
       </div>
     </header>
     <main class="new-property-container" id="new-property-container"></main>

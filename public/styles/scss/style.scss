@@ -71,49 +71,177 @@ body {
 @import "template";
 @import "colors";
 
-/*///////////////////////////////RESPONSIVE MOBIL///////////////////////////////////////*/
+/*/////////////////////////////// RESPONSIVE MOBIL 375PX ///////////////////////////////////////*/
 :root {
   font-size: 16px;
 }
 
-/*////////////////////////////////////HEADER////////////////////////////////////////////*/
+/*//////////////////////////////////// FONT-FAMILY ///////////////////////////////////////*/
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/assets/fonts/Poppins-Light.ttf");
+}
+
+/*//////////////////////////////////// BODY ////////////////////////////////////////////*/
+body {
+  font-family: "Poppins";
+  background-image: url("/public/assets/imgs/bcg-img.svg");
+  background-size: cover;
+  background-position: center;
+}
+/*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
 
 header {
-  .navbar-container {
-    display: none;
+  position: relative;
+  padding: 1rem 2rem;
+  background-color: $navbar-bcg-color;
+
+  .navbar {
+    width: 100%;
+    max-width: 100vw;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      .logo-img {
+        width: 3rem;
+        min-width: 3rem;
+      }
+    }
+
+    .links {
+      display: none;
+      gap: 2rem;
+      text-transform: uppercase;
+
+      li {
+        a {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: $links-color;
+          &:hover {
+            color: $links-hover-color;
+          }
+        }
+      }
+    }
+
+    .btn-connection {
+      display: none;
+
+      .btn-login-modal,
+      .btn-register-modal {
+        text-transform: uppercase;
+      }
+    }
+
+    .burger-menu-open,
+    .user {
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
   }
 
   .burger-container {
+    position: absolute;
+    display: none;
+  }
+}
+
+/*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
+main {
+  flex: 1;
+  position: relative;
+
+  // .register-modal,
+  .login-modal {
+    position: absolute;
     display: none;
   }
 
-  .profil-container {
-    display: block;
-  }
-
-  .user-profil-icon {
-    display: block;
-  }
-
   .register-modal {
-    display: block;
+    border-radius: 25px;
+    background-color: #4bd3eb80;
+    padding: 1rem 1rem;
+    width: 260px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .form-register {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+
+      label {
+        color: white;
+        font-size: 1.2rem;
+      }
+      input {
+        margin-bottom: 10px;
+      }
+
+      button {
+        @include template-btn(white, black, black, black);
+        font-size: 1rem;
+        text-transform: uppercase;
+        border-color: black;
+      }
+
+      .eye-open-register,
+      .eye-open-register2,
+      .eye-close-register,
+      .eye-close-register2 {
+        cursor: pointer;
+      }
+      i {
+        margin-left: 5px;
+      }
+
+      .email-register {
+        margin-right: 25px;
+      }
+
+      .eye-open-register,
+      .eye-open-register2 {
+        display: none;
+      }
+    }
   }
 
   .login-modal {
-    display: block;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .form-login {
+      .eye-open-login {
+        cursor: pointer;
+        display: none;
+      }
+    }
+  }
+
+  .cards-list-container {
+    display: grid;
   }
 }
 
-/*////////////////////////////////////MAIN//////////////////////////////////////////////*/
+/*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 
-main {
-  flex: 1;
-}
-
-/*////////////////////////////////////FOOTER////////////////////////////////////////////*/
-
-/*///////////////////////////////RESPONSIVE DESKTOP/////////////////////////////////////*/
-
-@media screen and (min-width: 1024px) {
+/*/////////////////////////////// RESPONSIVE DESKTOP /////////////////////////////////////*/
+@media (min-width: 1024px) {
   @import "desktop";
 }

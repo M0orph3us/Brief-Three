@@ -2,17 +2,46 @@
   font-size: 18px;
 }
 /*////////////////////////////////////HEADER////////////////////////////////////////////*/
-.navbar-container {
-  display: block;
-}
+header {
+  .navbar {
+    .logo {
+      position: static;
+      transform: none;
+    }
 
-.burger-container {
-  display: none;
-}
-.burger-open {
-  display: none;
-}
+    .links {
+      display: flex;
+      margin-left: 5rem;
+    }
 
+    .btn-connection {
+      display: block;
+
+      .btn-login-modal {
+        margin-right: 10px;
+      }
+
+      button {
+        @include template-btn(#4bd3eb, black, white, white);
+      }
+    }
+
+    .burger-menu-open {
+      display: none;
+    }
+
+    .user {
+      display: none;
+    }
+  }
+}
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
+
+main {
+  .register-modal,
+  .login-modal {
+    top: 40%;
+  }
+}
 
 /*////////////////////////////////////FOOTER////////////////////////////////////////////*/

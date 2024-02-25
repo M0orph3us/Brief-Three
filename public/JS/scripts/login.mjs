@@ -1,5 +1,12 @@
 import { Users } from "../class/Users.mjs";
 
+export function showLoginModal() {
+  const loginModal = document.querySelector("#login-modal");
+  loginModal.style.display = "block";
+}
+
+export function showPasswordLoginForm() {}
+
 export function login() {
   const alertLoginTarget = document.querySelector("#login-modal");
 

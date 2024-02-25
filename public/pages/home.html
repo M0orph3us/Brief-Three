@@ -10,7 +10,7 @@
     />
     <link
       rel="shortcut icon"
-      href="/public/assets/icons/maison.ico"
+      href="/public/assets/imgs/favicon.ico"
       type="image/x-icon"
     />
     <link
@@ -22,110 +22,34 @@
   </head>
   <body>
     <header>
-      <i
-        class="fa-solid fa-bars fa-sm"
-        alt="open burger menu"
-        id="burger-open"
-      ></i>
-      <div class="logo-container">
-        <a href="/public/pages/home.html">
-          <img src="/public/assets/imgs/home.svg" alt="logo" class="logo" />
-        </a>
-      </div>
-      <div class="navbar-container" id="navbar-container">
-        <ul class="navbar" id="nabar">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/public/pages/home.html">
+            <img
+              src="/public/assets/imgs/logo.svg"
+              alt="logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <ul class="links">
           <li><a href="/public/pages/home.html">home</a></li>
           <li><a href="/public/pages/new-property.html">new property</a></li>
         </ul>
-      </div>
-      <i
-        class="fa-solid fa-user fa-sm"
-        id="user-profil-icon"
-        alt="user options"
-      ></i>
-      <div class="profil-container" id="profil-container">
-        <ul>
-          <li class="login" id="login">login</li>
-          <li class="register" id="register">register</li>
-          <li class="adminboard-container" id="adminboard-container"></li>
-          <li class="logout-container" id="logout-container"></li>
-        </ul>
-      </div>
-      <div class="register-modal" id="register-modal">
-        <form class="form-register" id="form-register" action="#" method="post">
-          <label for="email-register">Email</label>
-          <input
-            type="email"
-            name="email-register"
-            id="email-register"
-            required
-          />
-          <div class="password-register-container">
-            <label for="password-register">Password</label>
-            <input
-              type="password"
-              name="password-register"
-              id="password-register"
-              required
-            />
-            <i
-              class="fa-solid fa-eye-slash fa-sm"
-              alt="to show your password"
-              id="eye-close-register"
-            ></i>
-            <i
-              class="fa-solid fa-eye fa-sm"
-              alt="to hide your password"
-              id="eye-open-register"
-            ></i>
-          </div>
-          <div class="password2-register-container">
-            <label for="password2-register">Enter your password again</label>
-            <input
-              type="password"
-              name="password2-register"
-              id="password2-register"
-              required
-            />
-            <i
-              class="fa-solid fa-eye-slash fa-sm"
-              alt="to show your password"
-              id="eye-close-register2"
-            ></i>
-            <i
-              class="fa-solid fa-eye fa-sm"
-              alt="to hide your password"
-              id="eye-open-register2"
-            ></i>
-          </div>
-          <button type="button" id="btn-register">Register</button>
-        </form>
-      </div>
-      <div class="login-modal" id="login-modal">
-        <form class="form-login" id="form-login" action="#" method="post">
-          <label for="email-login">Email</label>
-          <input type="email" name="email-login" id="email-login" required />
-          <div class="password-login-container">
-            <label for="password-login">Password</label>
-            <input
-              type="password"
-              name="password-login"
-              id="password-login"
-              required
-            />
-            <i
-              class="fa-solid fa-eye-slash fa-sm"
-              alt="to show your password"
-              id="eye-close-login"
-            ></i>
-            <i
-              class="fa-solid fa-eye fa-sm"
-              alt="to hide your password"
-              id="eye-open-login"
-            ></i>
-          </div>
-          <button type="button" id="btn-login">Login</button>
-        </form>
+        <div class="btn-connection">
+          <button type="button" class="btn-login-modal" id="btn-login-modal">
+            login
+          </button>
+          <button
+            type="button"
+            class="btn-register-modal"
+            id="btn-register-modal"
+          >
+            register
+          </button>
+        </div>
+        <i class="fa-solid fa-bars burger-menu-open" id="burger-menu-open"></i>
+        <i class="fa-solid fa-user user" id="user"></i>
       </div>
       <div class="burger-container" id="burger-container">
         <div class="burger-menu" id="burger-menu">
@@ -141,8 +65,100 @@
         </div>
       </div>
     </header>
-    <main class="cards-list-container" id="cards-list-container"></main>
+    <main class="cards-list-container" id="cards-list-container">
+      <div class="register-modal" id="register-modal">
+        <form class="form-register" id="form-register" action="#" method="post">
+          <label for="email-register">Email</label>
+          <input
+            type="email"
+            name="email-register"
+            id="email-register"
+            class="email-register"
+            required
+          />
+          <div class="password-register-container">
+            <label for="password-register">Password</label>
+            <input
+              type="password"
+              name="password-register"
+              id="password-register"
+              required
+            />
+            <i
+              class="fa-solid fa-eye-slash fa-sm eye-close-register"
+              alt="to show your password"
+              id="eye-close-register"
+            ></i>
+            <i
+              class="fa-solid fa-eye fa-sm eye-open-register"
+              alt="to hide your password"
+              id="eye-open-register"
+            ></i>
+          </div>
+          <div class="password2-register-container">
+            <label for="password2-register">Enter your password again</label>
+            <input
+              type="password"
+              name="password2-register"
+              id="password2-register"
+              required
+            />
+            <i
+              class="fa-solid fa-eye-slash fa-sm eye-close-register2"
+              alt="to show your password"
+              id="eye-close-register2"
+            ></i>
+            <i
+              class="fa-solid fa-eye fa-sm eye-open-register2"
+              alt="to hide your password"
+              id="eye-open-register2"
+            ></i>
+          </div>
+          <button type="button" id="btn-register">register</button>
+        </form>
+      </div>
+      <div class="login-modal" id="login-modal">
+        <form class="form-login" id="form-login" action="#" method="post">
+          <label for="email-login">Email</label>
+          <input type="email" name="email-login" id="email-login" required />
+          <div class="password-login-container">
+            <label for="password-login">Password</label>
+            <input
+              type="password"
+              name="password-login"
+              id="password-login"
+              required
+            />
+            <i
+              class="fa-solid fa-eye-slash fa-sm eye-close-login"
+              alt="to show your password"
+              id="eye-close-login"
+            ></i>
+            <i
+              class="fa-solid fa-eye fa-sm eye-open-login"
+              alt="to hide your password"
+              id="eye-open-login"
+            ></i>
+          </div>
+          <button type="button" id="btn-login">Login</button>
+        </form>
+      </div>
+    </main>
     <footer></footer>
   </body>
   <script type="module" src="/public/JS/index.mjs"></script>
 </html>
+
+<!-- fontawesome -->
+<!-- burger <i class="fa-solid fa-bars"></i> -->
+<!-- close burger <i class="fa-solid fa-x"></i> -->
+<!-- logout <i class="fa-solid fa-right-from-bracket"></i>  -->
+<!-- filter <i class="fa-solid fa-filter"></i>  -->
+<!-- location <i class="fa-solid fa-location-dot"></i> -->
+<!-- trash <i class="fa-solid fa-trash"></i> -->
+<!-- search <i class="fa-solid fa-magnifying-glass"></i> -->
+<!-- FB <i class="fa-brands fa-facebook"></i> -->
+<!-- X-twitter <i class="fa-brands fa-x-twitter"></i> -->
+<!-- insta <i class="fa-brands fa-instagram"></i> -->
+<!-- linkedin <i class="fa-brands fa-linkedin-in"></i> -->
+<!-- hearth <i class="fa-solid fa-heart"></i> -->
