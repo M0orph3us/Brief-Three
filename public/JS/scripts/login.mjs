@@ -53,10 +53,10 @@ export function createAdminBoard() {
     linkAdminboard.textContent = "admin board";
     adminBoardTarget.append(linkAdminboard);
 
-    const img = document.createElement("img");
+    const img = document.createElement("i");
     img.classList.add("img-logout");
     img.id = "img-logout";
-    img.src = "/public/assets/icons/logout.svg";
+    img.classList.add("fa-solid fa-right-from-bracket");
     img.alt = "icon logout";
     logoutTarget.append(img);
 

@@ -67,39 +67,41 @@ body {
   height: 100dvh;
 }
 
+// import template & colors
 @import "template";
+@import "colors";
 
 /*///////////////////////////////RESPONSIVE MOBIL///////////////////////////////////////*/
 :root {
-  font-size: 20px;
-  /* attribuer var en css --couleur-principal: black; */
+  font-size: 16px;
 }
-
-/* attribuer var en scss $primary-color: #3498db; */
 
 /*////////////////////////////////////HEADER////////////////////////////////////////////*/
-.navbar-container {
-  display: none;
-}
 
-.burger-container {
-  display: none;
-}
+header {
+  .navbar-container {
+    display: none;
+  }
 
-.profil-container {
-  display: block;
-}
+  .burger-container {
+    display: none;
+  }
 
-.user-profil-icon {
-  display: block;
-}
+  .profil-container {
+    display: block;
+  }
 
-.register-modal {
-  display: block;
-}
+  .user-profil-icon {
+    display: block;
+  }
 
-.login-modal {
-  display: block;
+  .register-modal {
+    display: block;
+  }
+
+  .login-modal {
+    display: block;
+  }
 }
 
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/

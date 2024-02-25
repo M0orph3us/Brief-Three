@@ -43,6 +43,7 @@ export class Users {
         localStorage.setItem(this.#mail, userDataStringify);
         return true;
       }
+      return false;
     }
   }
 }

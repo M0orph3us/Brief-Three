@@ -69,33 +69,26 @@ body {
 
 /*///////////////////////////////RESPONSIVE MOBIL///////////////////////////////////////*/
 :root {
-  font-size: 20px;
-  /* attribuer var en css --couleur-principal: black; */
+  font-size: 16px;
 }
 
-/* attribuer var en scss $primary-color: #3498db; */
 /*////////////////////////////////////HEADER////////////////////////////////////////////*/
-.navbar-container {
+header .navbar-container {
   display: none;
 }
-
-.burger-container {
+header .burger-container {
   display: none;
 }
-
-.profil-container {
+header .profil-container {
   display: block;
 }
-
-.user-profil-icon {
+header .user-profil-icon {
   display: block;
 }
-
-.register-modal {
+header .register-modal {
   display: block;
 }
-
-.login-modal {
+header .login-modal {
   display: block;
 }
 
@@ -108,7 +101,7 @@ main {
 /*///////////////////////////////RESPONSIVE DESKTOP/////////////////////////////////////*/
 @media screen and (min-width: 1024px) {
   :root {
-    font-size: 16px;
+    font-size: 18px;
   }
   /*////////////////////////////////////HEADER////////////////////////////////////////////*/
   .navbar-container {

@@ -1,5 +1,6 @@
 import { Maisons } from "../class/Maisons.mjs";
 import { Terrains } from "../class/Terrains.mjs";
+import { BienImmobilier } from "../class/BienImmobilier.mjs";
 
 // const mais = new Terrains("bellevue", "blabla", 1000, "Monaco", 15, "oui");
 
