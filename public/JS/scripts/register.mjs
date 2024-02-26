@@ -81,6 +81,10 @@ export function register() {
       newUser.register();
       const text = `Hello ${emailRegisterValue}, you're registered`;
       alert(text, "valid");
+      const clearSetTimeout = setTimeout(() => {
+        alertRegisterTarget.remove();
+        clearTimeout(clearSetTimeout);
+      }, 2000);
     }
   }
 }

@@ -108,7 +108,7 @@ header {
     .logo {
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 47%;
       transform: translate(-50%, -50%);
       .logo-img {
         width: 3rem;
@@ -148,20 +148,15 @@ header {
       font-size: 2rem;
       cursor: pointer;
     }
+
+    .user {
+      position: absolute;
+      top: 33%;
+      right: 5%;
+    }
   }
 
-  .burger-container {
-    position: absolute;
-    display: none;
-  }
-}
-
-/*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
-main {
-  flex: 1;
-  position: relative;
-
-  // .register-modal,
+  .register-modal,
   .login-modal {
     position: absolute;
     display: none;
@@ -172,10 +167,11 @@ main {
     background-color: #4bd3eb80;
     padding: 1rem 1rem;
     width: 260px;
-    position: absolute;
-    top: 30%;
+    top: 130%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    overflow-y: hidden;
+    transform: translate(-50%);
+    animation: 1s TopToBottom linear;
 
     .form-register {
       width: 100%;
@@ -195,7 +191,7 @@ main {
 
       button {
         @include template-btn(white, black, black, black);
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
         border-color: black;
       }
@@ -222,11 +218,43 @@ main {
   }
 
   .login-modal {
-    position: absolute;
-    top: 30%;
+    top: 130%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #4bd3eb80;
+    padding: 1rem 1rem;
+    width: 260px;
+    border-radius: 10%;
+    overflow-y: hidden;
+    transform: translate(-50%);
+    animation: 1s TopToBottom linear;
+
     .form-login {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+
+      .email-login {
+        margin-right: 25px;
+      }
+
+      label {
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      input {
+        margin-bottom: 10px;
+      }
+
+      button {
+        @include template-btn(white, black, black, black);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        border-color: black;
+      }
       .eye-open-login {
         cursor: pointer;
         display: none;
@@ -234,6 +262,77 @@ main {
     }
   }
 
+  @keyframes TopToBottom {
+    from {
+      transform: translate(-50%, -200%);
+    }
+    to {
+      transform: translate(-50%);
+    }
+  }
+
+  .burger-container {
+    padding: 0 10px;
+    top: 100%;
+    left: 0;
+    background-color: $navbar-bcg-color;
+    position: absolute;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    i {
+      position: absolute;
+      top: -79%;
+      left: 22%;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    ul {
+      li {
+        a {
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: $links-color;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    // display: none;
+  }
+
+  .user-container {
+    padding: 10px 0;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: $navbar-bcg-color;
+    width: 110px;
+    height: 120px;
+    top: 100%;
+    right: 0;
+
+    .btn-connection {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        @include template-btn(#4bd3eb, black, white, white);
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+/*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
+main {
+  flex: 1;
   .cards-list-container {
     display: grid;
   }

@@ -18,6 +18,7 @@ import {
   showRegisterModal,
   showPasswordRegisterForm,
 } from "./scripts/register.mjs";
+
 const btnRegister = document.querySelector("#btn-register");
 btnRegister.addEventListener("click", register);
 
@@ -28,7 +29,17 @@ const eyeCloseRegister = document.querySelector("#eye-close-register");
 eyeCloseRegister.addEventListener("click", showPasswordRegisterForm);
 
 // functions for users login
-import { login, createAdminBoard, showLoginModal } from "./scripts/login.mjs";
+import {
+  login,
+  logout,
+  createAdminBoard,
+  showLoginModal,
+  burgerMenu,
+  userMenu,
+} from "./scripts/navbar.mjs";
+
+burgerMenu();
+userMenu();
 createAdminBoard();
 const btnLogin = document.querySelector("#btn-login");
 btnLogin.addEventListener("click", () => {
@@ -38,9 +49,6 @@ btnLogin.addEventListener("click", () => {
 
 const btnLoginModal = document.querySelector("#btn-login-modal");
 btnLoginModal.addEventListener("click", showLoginModal);
-
-// function for users logout
-import { logout } from "./scripts/logout.mjs";
 
 // function to prevent an unconnected user from accessing the admin page
 document.addEventListener("DOMContentLoaded", () => {

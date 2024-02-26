@@ -34,14 +34,27 @@ header {
       display: none;
     }
   }
+  .register-modal,
+  .login-modal {
+    width: 400px;
+    // border-radius: 5px;
+  }
+
+  .login-modal {
+    border-radius: 5px;
+  }
+
+  .burger-container {
+    display: none;
+  }
+  .user-container {
+    display: none;
+  }
 }
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
 
-main {
-  .register-modal,
-  .login-modal {
-    top: 40%;
-  }
-}
+// main {
+
+// }
 
 /*////////////////////////////////////FOOTER////////////////////////////////////////////*/

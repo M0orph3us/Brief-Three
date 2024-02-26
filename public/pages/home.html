@@ -52,20 +52,30 @@
         <i class="fa-solid fa-user user" id="user"></i>
       </div>
       <div class="burger-container" id="burger-container">
-        <div class="burger-menu" id="burger-menu">
-          <i
-            class="fa-solid fa-x fa-sm"
-            alt="close burger menu"
-            id="burger-close"
-          ></i>
-          <ul>
-            <li><a href="/public/pages/home.html">home</a></li>
-            <li><a href="/public/pages/new-property.html">new property</a></li>
-          </ul>
+        <i
+          class="fa-solid fa-x fa-sm burger-close"
+          alt="close burger menu"
+          id="burger-close"
+        ></i>
+        <ul>
+          <li><a href="/public/pages/home.html">home</a></li>
+          <li><a href="/public/pages/new-property.html">new property</a></li>
+        </ul>
+      </div>
+      <div class="user-container" id="user-container">
+        <div class="btn-connection">
+          <button type="button" class="btn-login-modal" id="btn-login-modal">
+            login
+          </button>
+          <button
+            type="button"
+            class="btn-register-modal"
+            id="btn-register-modal"
+          >
+            register
+          </button>
         </div>
       </div>
-    </header>
-    <main class="cards-list-container" id="cards-list-container">
       <div class="register-modal" id="register-modal">
         <form class="form-register" id="form-register" action="#" method="post">
           <label for="email-register">Email</label>
@@ -143,7 +153,8 @@
           <button type="button" id="btn-login">Login</button>
         </form>
       </div>
-    </main>
+    </header>
+    <main class="cards-list-container" id="cards-list-container"></main>
     <footer></footer>
   </body>
   <script type="module" src="/public/JS/index.mjs"></script>

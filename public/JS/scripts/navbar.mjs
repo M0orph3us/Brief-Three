@@ -1,5 +1,32 @@
 import { Users } from "../class/Users.mjs";
 
+export function burgerMenu() {
+  const burgerMenuOpen = document.querySelector("#burger-menu-open");
+  const burgerContainer = document.querySelector("#burger-container");
+  burgerMenuOpen.addEventListener("click", () => {
+    burgerContainer.style.display = "flex";
+    burgerMenuOpen.style.display = "none";
+  });
+  const burgerClose = document.querySelector("#burger-close");
+  burgerClose.addEventListener("click", () => {
+    burgerContainer.style.display = "none";
+    burgerMenuOpen.style.display = "block";
+  });
+}
+
+export function userMenu() {
+  const userProfil = document.querySelector("#user");
+  const userContainer = document.querySelector("#user-container");
+  userProfil.addEventListener("click", () => {
+    console.log("test", window.getComputedStyle(userContainer).display);
+    if (window.getComputedStyle(userContainer).display === "none") {
+      userContainer.style.display = "flex";
+    } else {
+      userContainer.style.display = "none";
+    }
+  });
+}
+
 export function showLoginModal() {
   const loginModal = document.querySelector("#login-modal");
   loginModal.style.display = "block";
@@ -72,4 +99,31 @@ export function createAdminBoard() {
     const register = document.querySelector("#register");
     register.remove();
   }
+}
+
+export function logout() {
+  function getUserConnected() {
+    for (let k = 0; k < localStorage.length; k++) {
+      const user = localStorage.key(k);
+      const getData = localStorage.getItem(user);
+      const getDataParse = JSON.parse(getData);
+      if (getDataParse.isConnected === true) {
+        const userConnected = user;
+        return userConnected;
+      }
+    }
+    return false;
+  }
+
+  const getData = localStorage.getItem(getUserConnected());
+  const getDataParse = JSON.parse(getData);
+  getDataParse.isConnected = false;
+
+  const getDataStringify = JSON.stringify(getDataParse);
+  localStorage.setItem(getUserConnected(), getDataStringify);
+
+  const adminBoard = document.querySelector("#adminboard-link");
+  adminBoard.remove();
+  const imgLogout = document.querySelector("#img-logout");
+  imgLogout.remove();
 }
