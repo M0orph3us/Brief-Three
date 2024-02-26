@@ -151,7 +151,7 @@ header .register-modal {
   background-color: rgba(75, 211, 235, 0.5019607843);
   padding: 1rem 1rem;
   width: 260px;
-  top: 130%;
+  top: 310%;
   left: 50%;
   overflow-y: hidden;
   transform: translate(-50%);
@@ -206,26 +206,36 @@ header .register-modal .form-register .eye-open-register2 {
   display: none;
 }
 header .login-modal {
-  top: 130%;
+  top: 310%;
   left: 50%;
   background-color: rgba(75, 211, 235, 0.5019607843);
   padding: 1rem 1rem;
-  width: 260px;
+  width: 300px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 10%;
   overflow-y: hidden;
   transform: translate(-50%);
   animation: 1s TopToBottom linear;
 }
+header .login-modal .close-login-modal {
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  right: 10%;
+}
 header .login-modal .form-login {
-  width: 100%;
+  width: 85%;
   display: flex;
+  margin: auto;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
 }
 header .login-modal .form-login .email-login {
-  margin-right: 25px;
+  margin-right: 22px;
 }
 header .login-modal .form-login label {
   color: white;

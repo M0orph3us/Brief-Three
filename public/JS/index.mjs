@@ -22,8 +22,11 @@ import {
 const btnRegister = document.querySelector("#btn-register");
 btnRegister.addEventListener("click", register);
 
-const btnRegisterModal = document.querySelector("#btn-register-modal");
-btnRegisterModal.addEventListener("click", showRegisterModal);
+const btnRegisterModals = document.querySelectorAll("#btn-register-modal");
+const btnRegisterModalArray = [...btnRegisterModals];
+btnRegisterModalArray.forEach((btnRegisterModal) => {
+  btnRegisterModal.addEventListener("click", showRegisterModal);
+});
 
 const eyeCloseRegister = document.querySelector("#eye-close-register");
 eyeCloseRegister.addEventListener("click", showPasswordRegisterForm);
@@ -32,23 +35,26 @@ eyeCloseRegister.addEventListener("click", showPasswordRegisterForm);
 import {
   login,
   logout,
+  showHidenLoginModal,
   createAdminBoard,
-  showLoginModal,
-  burgerMenu,
-  userMenu,
-} from "./scripts/navbar.mjs";
-
-burgerMenu();
-userMenu();
+} from "./scripts/login.mjs";
 createAdminBoard();
+const btnLoginModals = document.querySelectorAll("#btn-login-modal");
+const btnLoginModalArray = [...btnLoginModals];
+btnLoginModalArray.forEach((btnLoginModal) => {
+  btnLoginModal.addEventListener("click", showHidenLoginModal);
+});
+
 const btnLogin = document.querySelector("#btn-login");
 btnLogin.addEventListener("click", () => {
   login();
   createAdminBoard();
 });
 
-const btnLoginModal = document.querySelector("#btn-login-modal");
-btnLoginModal.addEventListener("click", showLoginModal);
+// functions for navbar
+import { burgerMenu, userMenu } from "./scripts/navbar.mjs";
+burgerMenu();
+userMenu();
 
 // function to prevent an unconnected user from accessing the admin page
 document.addEventListener("DOMContentLoaded", () => {

@@ -167,7 +167,7 @@ header {
     background-color: #4bd3eb80;
     padding: 1rem 1rem;
     width: 260px;
-    top: 130%;
+    top: 310%;
     left: 50%;
     overflow-y: hidden;
     transform: translate(-50%);
@@ -218,26 +218,37 @@ header {
   }
 
   .login-modal {
-    top: 130%;
+    top: 310%;
     left: 50%;
     background-color: #4bd3eb80;
     padding: 1rem 1rem;
-    width: 260px;
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 10%;
     overflow-y: hidden;
     transform: translate(-50%);
     animation: 1s TopToBottom linear;
 
+    .close-login-modal {
+      cursor: pointer;
+      position: absolute;
+      top: 10%;
+      right: 10%;
+    }
+
     .form-login {
-      width: 100%;
+      width: 85%;
       display: flex;
+      margin: auto;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       text-align: center;
 
       .email-login {
-        margin-right: 25px;
+        margin-right: 22px;
       }
 
       label {

@@ -128,9 +128,16 @@
         </form>
       </div>
       <div class="login-modal" id="login-modal">
+        <i class="fa-solid fa-x close-login-modal" id="close-login-modal"></i>
         <form class="form-login" id="form-login" action="#" method="post">
           <label for="email-login">Email</label>
-          <input type="email" name="email-login" id="email-login" required />
+          <input
+            type="email"
+            name="email-login"
+            id="email-login"
+            class="email-login"
+            required
+          />
           <div class="password-login-container">
             <label for="password-login">Password</label>
             <input
