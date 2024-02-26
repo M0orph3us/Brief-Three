@@ -1,5 +1,21 @@
 import { Users } from "../class/Users.mjs";
 
+export function showRegisterModal() {
+  const registerModal = document.querySelector("#register-modal");
+  registerModal.style.display = "block";
+}
+
+export function showPasswordRegisterForm() {
+  const eyeCloseRegister = document.querySelector("#eye-close-register");
+  eyeCloseRegister.style.display = "none";
+
+  const eyeOpenRegister = document.querySelector("#eye-open-register");
+  eyeOpenRegister.style.display = "block";
+
+  const passwordInput = document.querySelector("#password-register");
+  passwordInput.type = "text";
+}
+
 export function register() {
   function alert(text, alertClass = "error") {
     const alertRegisterTarget = document.querySelector("#register-modal");
@@ -65,6 +81,10 @@ export function register() {
       newUser.register();
       const text = `Hello ${emailRegisterValue}, you're registered`;
       alert(text, "valid");
+      const clearSetTimeout = setTimeout(() => {
+        alertRegisterTarget.remove();
+        clearTimeout(clearSetTimeout);
+      }, 2000);
     }
   }
 }

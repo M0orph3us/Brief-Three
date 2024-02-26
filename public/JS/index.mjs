@@ -1,4 +1,6 @@
 "use strict";
+
+// To create the localStorage if it does not exist
 const checkLocalStorage = localStorage.getItem("products");
 if (checkLocalStorage === null) {
   const data = {
@@ -10,11 +12,34 @@ if (checkLocalStorage === null) {
   localStorage.setItem("products", dataStringify);
 }
 
-import { register } from "./scripts/register.mjs";
+//  functions for users register
+import {
+  register,
+  showRegisterModal,
+  showPasswordRegisterForm,
+} from "./scripts/register.mjs";
+
 const btnRegister = document.querySelector("#btn-register");
 btnRegister.addEventListener("click", register);
 
-import { login, createAdminBoard } from "./scripts/login.mjs";
+const btnRegisterModal = document.querySelector("#btn-register-modal");
+btnRegisterModal.addEventListener("click", showRegisterModal);
+
+const eyeCloseRegister = document.querySelector("#eye-close-register");
+eyeCloseRegister.addEventListener("click", showPasswordRegisterForm);
+
+// functions for users login
+import {
+  login,
+  logout,
+  createAdminBoard,
+  showLoginModal,
+  burgerMenu,
+  userMenu,
+} from "./scripts/navbar.mjs";
+
+burgerMenu();
+userMenu();
 createAdminBoard();
 const btnLogin = document.querySelector("#btn-login");
 btnLogin.addEventListener("click", () => {
@@ -22,8 +47,10 @@ btnLogin.addEventListener("click", () => {
   createAdminBoard();
 });
 
-import { logout } from "./scripts/logout.mjs";
+const btnLoginModal = document.querySelector("#btn-login-modal");
+btnLoginModal.addEventListener("click", showLoginModal);
 
+// function to prevent an unconnected user from accessing the admin page
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
   if (currentPage === "/public/pages/adminboard.html") {

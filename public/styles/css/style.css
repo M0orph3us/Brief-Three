@@ -67,50 +67,320 @@ body {
   height: 100dvh;
 }
 
-/*///////////////////////////////RESPONSIVE MOBIL///////////////////////////////////////*/
+/*/////////////////////////////// RESPONSIVE MOBIL 375PX ///////////////////////////////////////*/
 :root {
   font-size: 16px;
 }
 
-/*////////////////////////////////////HEADER////////////////////////////////////////////*/
-header .navbar-container {
-  display: none;
+/*//////////////////////////////////// FONT-FAMILY ///////////////////////////////////////*/
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/assets/fonts/Poppins-Light.ttf");
 }
-header .burger-container {
-  display: none;
-}
-header .profil-container {
-  display: block;
-}
-header .user-profil-icon {
-  display: block;
-}
-header .register-modal {
-  display: block;
-}
-header .login-modal {
-  display: block;
+/*//////////////////////////////////// BODY ////////////////////////////////////////////*/
+body {
+  font-family: "Poppins";
+  background-image: url("/public/assets/imgs/bcg-img.svg");
+  background-size: cover;
+  background-position: center;
 }
 
-/*////////////////////////////////////MAIN//////////////////////////////////////////////*/
+/*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
+header {
+  position: relative;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.2392156863);
+}
+header .navbar {
+  width: 100%;
+  max-width: 100vw;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .navbar .logo {
+  position: absolute;
+  left: 50%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+}
+header .navbar .logo .logo-img {
+  width: 3rem;
+  min-width: 3rem;
+}
+header .navbar .links {
+  display: none;
+  gap: 2rem;
+  text-transform: uppercase;
+}
+header .navbar .links li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+header .navbar .links li a:hover {
+  color: #4bd3eb;
+}
+header .navbar .btn-connection {
+  display: none;
+}
+header .navbar .btn-connection .btn-login-modal,
+header .navbar .btn-connection .btn-register-modal {
+  text-transform: uppercase;
+}
+header .navbar .burger-menu-open,
+header .navbar .user {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+header .navbar .user {
+  position: absolute;
+  top: 33%;
+  right: 5%;
+}
+header .register-modal,
+header .login-modal {
+  position: absolute;
+  display: none;
+}
+header .register-modal {
+  border-radius: 25px;
+  background-color: rgba(75, 211, 235, 0.5019607843);
+  padding: 1rem 1rem;
+  width: 260px;
+  top: 130%;
+  left: 50%;
+  overflow-y: hidden;
+  transform: translate(-50%);
+  animation: 1s TopToBottom linear;
+}
+header .register-modal .form-register {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+header .register-modal .form-register label {
+  color: white;
+  font-size: 1.2rem;
+}
+header .register-modal .form-register input {
+  margin-bottom: 10px;
+}
+header .register-modal .form-register button {
+  background-color: white;
+  border: 2px solid transparent;
+  color: black;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-color: black;
+}
+header .register-modal .form-register button:hover {
+  border: 2px solid black;
+  color: black;
+}
+header .register-modal .form-register .eye-open-register,
+header .register-modal .form-register .eye-open-register2,
+header .register-modal .form-register .eye-close-register,
+header .register-modal .form-register .eye-close-register2 {
+  cursor: pointer;
+}
+header .register-modal .form-register i {
+  margin-left: 5px;
+}
+header .register-modal .form-register .email-register {
+  margin-right: 25px;
+}
+header .register-modal .form-register .eye-open-register,
+header .register-modal .form-register .eye-open-register2 {
+  display: none;
+}
+header .login-modal {
+  top: 130%;
+  left: 50%;
+  background-color: rgba(75, 211, 235, 0.5019607843);
+  padding: 1rem 1rem;
+  width: 260px;
+  border-radius: 10%;
+  overflow-y: hidden;
+  transform: translate(-50%);
+  animation: 1s TopToBottom linear;
+}
+header .login-modal .form-login {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+header .login-modal .form-login .email-login {
+  margin-right: 25px;
+}
+header .login-modal .form-login label {
+  color: white;
+  font-size: 1.2rem;
+}
+header .login-modal .form-login input {
+  margin-bottom: 10px;
+}
+header .login-modal .form-login button {
+  background-color: white;
+  border: 2px solid transparent;
+  color: black;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-color: black;
+}
+header .login-modal .form-login button:hover {
+  border: 2px solid black;
+  color: black;
+}
+header .login-modal .form-login .eye-open-login {
+  cursor: pointer;
+  display: none;
+}
+@keyframes TopToBottom {
+  from {
+    transform: translate(-50%, -200%);
+  }
+  to {
+    transform: translate(-50%);
+  }
+}
+header .burger-container {
+  padding: 0 10px;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2392156863);
+  position: absolute;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+header .burger-container i {
+  position: absolute;
+  top: -79%;
+  left: 22%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+header .burger-container ul li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+header .user-container {
+  padding: 10px 0;
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2392156863);
+  width: 110px;
+  height: 120px;
+  top: 100%;
+  right: 0;
+}
+header .user-container .btn-connection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+header .user-container .btn-connection button {
+  background-color: #4bd3eb;
+  border: 2px solid transparent;
+  color: black;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+header .user-container .btn-connection button:hover {
+  border: 2px solid white;
+  color: white;
+}
+
+/*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
 }
+main .cards-list-container {
+  display: grid;
+}
 
-/*////////////////////////////////////FOOTER////////////////////////////////////////////*/
-/*///////////////////////////////RESPONSIVE DESKTOP/////////////////////////////////////*/
-@media screen and (min-width: 1024px) {
+/*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
+/*/////////////////////////////// RESPONSIVE DESKTOP /////////////////////////////////////*/
+@media (min-width: 1024px) {
   :root {
     font-size: 18px;
   }
   /*////////////////////////////////////HEADER////////////////////////////////////////////*/
-  .navbar-container {
+  header .navbar .logo {
+    position: static;
+    transform: none;
+  }
+  header .navbar .links {
+    display: flex;
+    margin-left: 5rem;
+  }
+  header .navbar .btn-connection {
     display: block;
   }
-  .burger-container {
+  header .navbar .btn-connection .btn-login-modal {
+    margin-right: 10px;
+  }
+  header .navbar .btn-connection button {
+    background-color: #4bd3eb;
+    border: 2px solid transparent;
+    color: black;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  header .navbar .btn-connection button:hover {
+    border: 2px solid white;
+    color: white;
+  }
+  header .navbar .burger-menu-open {
     display: none;
   }
-  .burger-open {
+  header .navbar .user {
+    display: none;
+  }
+  header .register-modal,
+  header .login-modal {
+    width: 400px;
+  }
+  header .login-modal {
+    border-radius: 5px;
+  }
+  header .burger-container {
+    display: none;
+  }
+  header .user-container {
     display: none;
   }
   /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
