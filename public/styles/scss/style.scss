@@ -85,7 +85,7 @@ body {
 /*//////////////////////////////////// BODY ////////////////////////////////////////////*/
 body {
   font-family: "Poppins";
-  background-image: url("/public/assets/imgs/bcg-img.svg");
+  background-image: url("/public/assets/imgs/bcg-img.webp");
   background-size: cover;
   background-position: center;
 }
@@ -344,12 +344,67 @@ header {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
+
+  .select-container select,
+  .select-container select option {
+    text-transform: capitalize;
+  }
+
+  .form-new-property-container {
+    form {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      label {
+        color: $links-color;
+        text-transform: capitalize;
+      }
+      input {
+        margin-bottom: 1rem;
+      }
+
+      button {
+        @include template-btn(white, black, black, black);
+        text-transform: uppercase;
+      }
+
+      .house-input-container {
+        display: none;
+      }
+
+      .apartment-input-container {
+        display: none;
+      }
+
+      .land-input-container {
+        display: none;
+      }
+    }
+  }
+
+  .select-container {
+    padding: 1rem;
+
+    label {
+      color: $links-color;
+    }
+
+    button {
+      @include template-btn(white, black, black, black);
+      text-transform: uppercase;
+    }
+  }
+
   .cards-list-container {
     display: grid;
   }
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
+footer {
+  background-color: $navbar-bcg-color;
+}
 
 /*/////////////////////////////// RESPONSIVE DESKTOP /////////////////////////////////////*/
 @media (min-width: 1024px) {

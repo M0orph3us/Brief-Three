@@ -56,6 +56,10 @@ import { burgerMenu, userMenu } from "./scripts/navbar.mjs";
 burgerMenu();
 userMenu();
 
+// functions for new property
+import { selectFormNewProperty } from "./scripts/newProperty.mjs";
+selectFormNewProperty();
+
 // function to prevent an unconnected user from accessing the admin page
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;

@@ -128,9 +128,16 @@
         </form>
       </div>
       <div class="login-modal" id="login-modal">
+        <i class="fa-solid fa-x close-login-modal" id="close-login-modal"></i>
         <form class="form-login" id="form-login" action="#" method="post">
           <label for="email-login">Email</label>
-          <input type="email" name="email-login" id="email-login" required />
+          <input
+            type="email"
+            name="email-login"
+            id="email-login"
+            class="email-login"
+            required
+          />
           <div class="password-login-container">
             <label for="password-login">Password</label>
             <input
@@ -154,8 +161,128 @@
         </form>
       </div>
     </header>
-    <main class="new-property-container" id="new-property-container"></main>
-    <footer></footer>
+    <main class="new-property-container" id="new-property-container">
+      <div class="select-container">
+        <label for="select-new-property"
+          >Select the property you want to add</label
+        >
+        <select name="select-new-property" id="select-new-property">
+          <option value="house">house</option>
+          <option value="apartment">apartment</option>
+          <option value="land">land</option>
+        </select>
+        <button
+          type="button"
+          class="btn-select-new-property"
+          id="btn-select-new-property"
+        >
+          select
+        </button>
+      </div>
+      <div class="form-new-property-container">
+        <form
+          action="#"
+          method="GET"
+          class="form-new-property"
+          id="form-new-property"
+        >
+          <label for="title">title</label>
+          <input type="text" id="title" />
+
+          <label for="description">description</label>
+          <input type="text" id="description" />
+
+          <label for="price">price</label>
+          <input type="number" id="price" />
+
+          <label for="location">location</label>
+          <input type="text" id="location" />
+
+          <label for="m2">m2</label>
+          <input type="number" id="m2" />
+
+          <div class="house-input-container" id="house-input-container">
+            <label for="house-number-of-rooms">Number of rooms</label>
+            <input
+              name="house-number-of-rooms"
+              type="number"
+              id="house-number-of-rooms"
+            />
+
+            <label for="number-of-stories">Number of stories</label>
+            <input
+              name="number-of-stories"
+              type="number"
+              id="number-of-stories"
+            />
+
+            <label for="house-furnished">Furnished</label>
+            <select name="house-furnished" id="house-furnished">
+              <option value="true">yes</option>
+              <option value="false">no</option>
+            </select>
+
+            <label for="garden">Garden</label>
+            <select name="garden" id="garden">
+              <option value="true">yes</option>
+              <option value="false">no</option>
+            </select>
+
+            <label for="pool">Pool</label>
+            <select name="pool" id="pool">
+              <option value="true">yes</option>
+              <option value="false">no</option>
+            </select>
+          </div>
+          <div class="apartment-input-container" id="apartment-input-container">
+            <label for="floors">Floors</label>
+            <input name="floors" type="number" id="floors" />
+
+            <label for="elevator">Elevator</label>
+            <select name="elevator" id="elevator">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+            <label for="apartment-number-of-rooms">Number of rooms</label>
+            <input
+              name="apartment-number-of-rooms"
+              type="number"
+              id="apartment-number-of-rooms"
+            />
+
+            <label for="apartment-furnished">Furnished</label>
+            <select name="apartment-furnished" id="apartment-furnished">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+
+            <label for="balcony">Balcony</label>
+            <select name="balcony" id="balcony">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+          <div class="land-input-container" id="land-input-container">
+            <label for="buildable">Buildable</label>
+            <select name="buildable" id="buildable">
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+          <button type="button" id="btn-form-new-property">send</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="social-media-container">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+      </div>
+    </footer>
   </body>
   <script type="module" src="/public/JS/index.mjs"></script>
+  <script type="module" src="/public/JS/scripts/test.js"></script>
 </html>
