@@ -351,11 +351,14 @@ main {
   }
 
   .form-new-property-container {
+    position: relative;
     form {
-      display: none;
-      flex-direction: column;
+      display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
+      gap: 50px;
+
       label {
         color: $links-color;
         text-transform: capitalize;
@@ -365,20 +368,29 @@ main {
       }
 
       button {
+        display: none;
+        position: absolute;
+        top: 112%;
+        right: 47%;
         @include template-btn(white, black, black, black);
         text-transform: uppercase;
       }
 
-      .house-input-container {
-        display: none;
-      }
-
+      .house-input-container,
       .apartment-input-container {
-        display: none;
+        position: absolute;
+        top: 0;
+        right: 20%;
       }
 
+      .input-container,
+      .house-input-container,
+      .apartment-input-container,
       .land-input-container {
         display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

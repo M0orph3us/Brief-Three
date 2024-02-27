@@ -339,11 +339,15 @@ main .select-container select,
 main .select-container select option {
   text-transform: capitalize;
 }
+main .form-new-property-container {
+  position: relative;
+}
 main .form-new-property-container form {
-  display: none;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 50px;
 }
 main .form-new-property-container form label {
   color: white;
@@ -353,6 +357,10 @@ main .form-new-property-container form input {
   margin-bottom: 1rem;
 }
 main .form-new-property-container form button {
+  display: none;
+  position: absolute;
+  top: 112%;
+  right: 47%;
   background-color: white;
   border: 2px solid transparent;
   color: black;
@@ -367,14 +375,20 @@ main .form-new-property-container form button:hover {
   border: 2px solid black;
   color: black;
 }
-main .form-new-property-container form .house-input-container {
-  display: none;
-}
+main .form-new-property-container form .house-input-container,
 main .form-new-property-container form .apartment-input-container {
-  display: none;
+  position: absolute;
+  top: 0;
+  right: 20%;
 }
+main .form-new-property-container form .input-container,
+main .form-new-property-container form .house-input-container,
+main .form-new-property-container form .apartment-input-container,
 main .form-new-property-container form .land-input-container {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 main .select-container {
   padding: 1rem;
