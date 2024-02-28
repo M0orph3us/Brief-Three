@@ -10,13 +10,7 @@ export class Terrains extends BienImmobilier {
 
     this.setStorage();
   }
-  //   setters & getters
-  // get buildable() {
-  //   return this.#buildable;
-  // }
-  // set buildable(buildable) {
-  //   this.#buildable = buildable;
-  // }
+
   //   methods
   setStorage() {
     const currentDate = new Date().toLocaleDateString("en-GB");

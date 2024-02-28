@@ -1,36 +1,41 @@
+import { LocalStorage } from "../class/LocalStorage.mjs";
 
+const test = new LocalStorage();
+// test.getStorageLand();
+// test.getStorageHouse();
+// test.getStorageApartment();
+// test.getAllStorage();
+const cardsListTarget = document.querySelector("#cards-list-container");
+test.getStorageLand().forEach((value) => {
+  console.log(value);
+  const createCardContainer = document.createElement("div");
+  createCardContainer.id = value.id;
+  createCardContainer.classList.add("card-container");
 
-// function setCard() {
-//     const cardsListTarget = document.querySelector("#cards-list");
+  cardsListTarget.append(createCardContainer);
 
-//     const createCardContainer = document.createElement("div");
-//     createCardContainer.id = this.#id;
-//     createCardContainer.classList.add("card-container");
+  const cardContainerTarget = document.getElementById(value.id);
 
-//     cardsListTarget.append(createCardContainer);
+  const createTitle = document.createElement("h3");
+  createTitle.textContent = value.title;
 
-//     const cardContainerTarget = document.getElementById(this.#id);
+  const createLocation = document.createElement("p");
+  createLocation.textContent = value.location;
 
-//     const createTitle = document.createElement("h3");
-//     createTitle.textContent = this.#title;
+  const createDescription = document.createElement("p");
+  createDescription.textContent = value.description;
 
-//     const createLocation = document.createElement("p");
-//     createLocation.textContent = this.#location;
+  const createM2 = document.createElement("p");
+  createM2.textContent = value.m2;
 
-//     const createDescription = document.createElement("p");
-//     createDescription.textContent = this.#description;
+  const price = document.createElement("p");
+  price.textContent = value.price;
 
-//     const createM2 = document.createElement("p");
-//     createM2.textContent = this.#m2;
-
-//     const price = document.createElement("p");
-//     price.textContent = this.#price;
-
-//     cardContainerTarget.append(
-//       createTitle,
-//       createLocation,
-//       createDescription,
-//       createM2,
-//       price
-//     );
-//   }
+  cardContainerTarget.append(
+    createTitle,
+    createLocation,
+    createDescription,
+    createM2,
+    price
+  );
+});

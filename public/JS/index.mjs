@@ -57,8 +57,25 @@ burgerMenu();
 userMenu();
 
 // functions for new property
-import { selectFormNewProperty } from "./scripts/newProperty.mjs";
-selectFormNewProperty();
+import {
+  selectFormNewProperty,
+  setLocalStorage,
+} from "./scripts/newProperty.mjs";
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname;
+  if (currentPage === "/public/pages/new-property.html") {
+    const btnSelectNewProperty = document.querySelector(
+      "#btn-select-new-property"
+    );
+    btnSelectNewProperty.addEventListener("click", () => {
+      selectFormNewProperty();
+    });
+    const btnFormNewProperty = document.querySelector("#btn-form-new-property");
+    btnFormNewProperty.addEventListener("click", () => {
+      setLocalStorage();
+    });
+  }
+});
 
 // function to prevent an unconnected user from accessing the admin page
 document.addEventListener("DOMContentLoaded", () => {
