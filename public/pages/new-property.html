@@ -161,185 +161,193 @@
         </form>
       </div>
     </header>
-    <main class="new-property-container" id="new-property-container">
-      <div class="select-container">
-        <label for="select-new-property"
-          >Select the property you want to add</label
-        >
-        <select name="select-new-property" id="select-new-property">
-          <option value="house">house</option>
-          <option value="apartment">apartment</option>
-          <option value="land">land</option>
-        </select>
-        <button
-          type="button"
-          class="btn-select-new-property"
-          id="btn-select-new-property"
-        >
-          select
-        </button>
-      </div>
-      <div class="form-new-property-container">
-        <form
-          action="#"
-          method="GET"
-          class="form-new-property-house"
-          id="form-new-property-house"
-        >
-          <div class="input-repeat-house">
-            <label for="title-house">title</label>
-            <input type="text" id="title-house" name="title" />
+    <main>
+      <div class="new-property-container" id="new-property-container">
+        <div class="select-container">
+          <label for="select-new-property"
+            >Select the property you want to add</label
+          >
+          <select name="select-new-property" id="select-new-property">
+            <option value="house">house</option>
+            <option value="apartment">apartment</option>
+            <option value="land">land</option>
+          </select>
+          <button
+            type="button"
+            class="btn-select-new-property"
+            id="btn-select-new-property"
+          >
+            select
+          </button>
+        </div>
+        <div class="form-new-property-container">
+          <form
+            action="#"
+            method="GET"
+            class="form-new-property-house"
+            id="form-new-property-house"
+          >
+            <div class="input-repeat-house">
+              <label for="title-house">title</label>
+              <input type="text" id="title-house" name="title" />
 
-            <label for="description-house">description</label>
-            <input type="text" id="description-house" name="description" />
+              <label for="description-house">description</label>
+              <input type="text" id="description-house" name="description" />
 
-            <label for="price-house">price</label>
-            <input type="number" id="price-house" name="price" />
+              <label for="price-house">price</label>
+              <input type="number" id="price-house" name="price" />
 
-            <label for="location-house">location</label>
-            <input type="text" id="location-house" name="location" />
+              <label for="location-house">location</label>
+              <input type="text" id="location-house" name="location" />
 
-            <label for="m2-house">m2</label>
-            <input type="number" id="m2-house" name="m2" />
-            <button
-              type="button"
-              id="change-input-container-house"
-              class="change-input-container-house"
-            >
-              next
-            </button>
-          </div>
-          <div class="input-house">
-            <label for="house-number-of-rooms">Number of rooms</label>
-            <input
-              type="number"
-              id="house-number-of-rooms"
-              name="numberOfRooms"
-            />
+              <label for="m2-house">m2</label>
+              <input type="number" id="m2-house" name="m2" />
+              <button
+                type="button"
+                id="change-input-container-house"
+                class="change-input-container-house"
+              >
+                next
+              </button>
+            </div>
+            <div class="input-house">
+              <label for="house-number-of-rooms">Number of rooms</label>
+              <input
+                type="number"
+                id="house-number-of-rooms"
+                name="numberOfRooms"
+              />
 
-            <label for="number-of-stories">Number of stories</label>
-            <input
-              type="number"
-              id="number-of-stories"
-              name="numberOfStories"
-            />
+              <label for="number-of-stories">Number of stories</label>
+              <input
+                type="number"
+                id="number-of-stories"
+                name="numberOfStories"
+              />
 
-            <label for="house-furnished">Furnished</label>
-            <select name="furnished" id="house-furnished">
-              <option value="true">yes</option>
-              <option value="false">no</option>
-            </select>
+              <label for="house-furnished">Furnished</label>
+              <select name="furnished" id="house-furnished">
+                <option value="true">yes</option>
+                <option value="false">no</option>
+              </select>
 
-            <label for="garden">Garden</label>
-            <select name="garden" id="garden">
-              <option value="true">yes</option>
-              <option value="false">no</option>
-            </select>
+              <label for="garden">Garden</label>
+              <select name="garden" id="garden">
+                <option value="true">yes</option>
+                <option value="false">no</option>
+              </select>
 
-            <label for="pool">Pool</label>
-            <select name="pool" id="pool">
-              <option value="true">yes</option>
-              <option value="false">no</option>
-            </select>
+              <label for="pool">Pool</label>
+              <select name="pool" id="pool">
+                <option value="true">yes</option>
+                <option value="false">no</option>
+              </select>
 
-            <button type="button" id="btn-back-house-repeat">back</button>
-            <button type="submit" id="btn-form-new-property-house">send</button>
-          </div>
-        </form>
-        <form
-          action="#"
-          method="GET"
-          class="form-new-property-apartment"
-          id="form-new-property-apartment"
-        >
-          <div class="input-repeat-apartment">
-            <label for="title-apartment">title</label>
-            <input type="text" id="title-apartment" name="title" />
+              <button type="button" id="btn-back-house-repeat">back</button>
+              <button type="submit" id="btn-form-new-property-house">
+                send
+              </button>
+            </div>
+          </form>
+          <form
+            action="#"
+            method="GET"
+            class="form-new-property-apartment"
+            id="form-new-property-apartment"
+          >
+            <div class="input-repeat-apartment">
+              <label for="title-apartment">title</label>
+              <input type="text" id="title-apartment" name="title" />
 
-            <label for="description-apartment">description</label>
-            <input type="text" id="description-apartment" name="description" />
+              <label for="description-apartment">description</label>
+              <input
+                type="text"
+                id="description-apartment"
+                name="description"
+              />
 
-            <label for="price-apartment">price</label>
-            <input type="number" id="price-apartment" name="price" />
+              <label for="price-apartment">price</label>
+              <input type="number" id="price-apartment" name="price" />
 
-            <label for="location-apartment">location</label>
-            <input type="text" id="location-apartment" name="location" />
+              <label for="location-apartment">location</label>
+              <input type="text" id="location-apartment" name="location" />
 
-            <label for="m2-apartment">m2</label>
-            <input type="number" id="m2-apartment" name="m2" />
-            <button
-              type="button"
-              id="change-input-container-apartment"
-              class="change-input-container-apartment"
-            >
-              next
-            </button>
-          </div>
-          <div class="input-apartment">
-            <label for="floors">Floors</label>
-            <input name="floors" type="number" id="floors" />
+              <label for="m2-apartment">m2</label>
+              <input type="number" id="m2-apartment" name="m2" />
+              <button
+                type="button"
+                id="change-input-container-apartment"
+                class="change-input-container-apartment"
+              >
+                next
+              </button>
+            </div>
+            <div class="input-apartment">
+              <label for="floors">Floors</label>
+              <input name="floors" type="number" id="floors" />
 
-            <label for="apartment-number-of-rooms">Number of rooms</label>
-            <input
-              name="numberOfRooms"
-              type="number"
-              id="apartment-number-of-rooms"
-            />
+              <label for="apartment-number-of-rooms">Number of rooms</label>
+              <input
+                name="numberOfRooms"
+                type="number"
+                id="apartment-number-of-rooms"
+              />
 
-            <label for="elevator">Elevator</label>
-            <select name="elevator" id="elevator">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
+              <label for="elevator">Elevator</label>
+              <select name="elevator" id="elevator">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
 
-            <label for="apartment-furnished">Furnished</label>
-            <select name="furnished" id="apartment-furnished">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
+              <label for="apartment-furnished">Furnished</label>
+              <select name="furnished" id="apartment-furnished">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
 
-            <label for="balcony">Balcony</label>
-            <select name="balcony" id="balcony">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-            <button type="button" id="btn-back-apartment-repeat">back</button>
-            <button type="submit" id="btn-form-new-property-apartment">
-              send
-            </button>
-          </div>
-        </form>
-        <form
-          action="#"
-          method="GET"
-          class="form-new-property-land"
-          id="form-new-property-land"
-        >
-          <div class="input-repeat-land" id="input-repeat-land">
-            <label for="title-land">title</label>
-            <input type="text" id="title-land" name="title" />
+              <label for="balcony">Balcony</label>
+              <select name="balcony" id="balcony">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+              <button type="button" id="btn-back-apartment-repeat">back</button>
+              <button type="submit" id="btn-form-new-property-apartment">
+                send
+              </button>
+            </div>
+          </form>
+          <form
+            action="#"
+            method="GET"
+            class="form-new-property-land"
+            id="form-new-property-land"
+          >
+            <div class="input-repeat-land" id="input-repeat-land">
+              <label for="title-land">title</label>
+              <input type="text" id="title-land" name="title" />
 
-            <label for="description-land">description</label>
-            <input type="text" id="description-land" name="description" />
+              <label for="description-land">description</label>
+              <input type="text" id="description-land" name="description" />
 
-            <label for="price-land">price</label>
-            <input type="number" id="price-land" name="price" />
+              <label for="price-land">price</label>
+              <input type="number" id="price-land" name="price" />
 
-            <label for="location-land">location</label>
-            <input type="text" id="location-land" name="location" />
+              <label for="location-land">location</label>
+              <input type="text" id="location-land" name="location" />
 
-            <label for="m2-land">m2</label>
-            <input type="number" id="m2-land" name="m2" />
-          </div>
-          <div class="input-land">
-            <label for="buildable">Buildable</label>
-            <select name="buildable" id="buildable">
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-          </div>
-          <button type="submit" id="btn-form-new-property-land">send</button>
-        </form>
+              <label for="m2-land">m2</label>
+              <input type="number" id="m2-land" name="m2" />
+            </div>
+            <div class="input-land">
+              <label for="buildable">Buildable</label>
+              <select name="buildable" id="buildable">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+            <button type="submit" id="btn-form-new-property-land">send</button>
+          </form>
+        </div>
       </div>
     </main>
     <footer>

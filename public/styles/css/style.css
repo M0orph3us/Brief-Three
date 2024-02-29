@@ -335,6 +335,10 @@ header .user-container .btn-connection button:hover {
 main {
   flex: 1;
 }
+main .cards-list-container {
+  position: relative;
+  display: grid;
+}
 main .select-container select,
 main .select-container select option {
   text-transform: capitalize;
@@ -428,9 +432,6 @@ main .form-new-property-container .form-new-property-land .input-land {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-main .cards-list-container {
-  display: grid;
 }
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/

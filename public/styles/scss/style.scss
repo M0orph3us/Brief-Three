@@ -342,6 +342,10 @@ header {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
+  .cards-list-container {
+    position: relative;
+    display: grid;
+  }
   .select-container select,
   .select-container select option {
     text-transform: capitalize;
@@ -427,10 +431,6 @@ main {
         align-items: center;
       }
     }
-  }
-
-  .cards-list-container {
-    display: grid;
   }
 }
 
