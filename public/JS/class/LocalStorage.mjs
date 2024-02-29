@@ -9,11 +9,6 @@ export class LocalStorage {
     return data;
   }
 
-  getAllStorage() {
-    const getStorage = localStorage.getItem("products");
-    const data = JSON.parse(getStorage);
-    return data;
-  }
   getStorageLand() {
     const land = this.getStorage().terrains;
     return land;

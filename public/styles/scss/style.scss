@@ -344,57 +344,10 @@ header {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
-
   .select-container select,
   .select-container select option {
     text-transform: capitalize;
   }
-
-  .form-new-property-container {
-    position: relative;
-    form {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-
-      label {
-        color: $links-color;
-        text-transform: capitalize;
-      }
-      input {
-        margin-bottom: 1rem;
-      }
-
-      button {
-        display: none;
-        position: absolute;
-        top: 112%;
-        right: 47%;
-        @include template-btn(white, black, black, black);
-        text-transform: uppercase;
-      }
-
-      .house-input-container,
-      .apartment-input-container {
-        position: absolute;
-        top: 0;
-        right: 20%;
-      }
-
-      .input-container,
-      .house-input-container,
-      .apartment-input-container,
-      .land-input-container {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
-
   .select-container {
     padding: 1rem;
 
@@ -405,6 +358,76 @@ main {
     button {
       @include template-btn(white, black, black, black);
       text-transform: uppercase;
+    }
+  }
+
+  .form-new-property-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    form {
+      width: 35%;
+      label {
+        color: $links-color;
+        text-transform: capitalize;
+      }
+      input {
+        margin-bottom: 1rem;
+      }
+
+      button {
+        @include template-btn(white, black, black, black);
+        text-transform: uppercase;
+      }
+    }
+
+    .form-new-property-house,
+    .form-new-property-apartment,
+    .form-new-property-land {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-new-property-house {
+      .input-repeat-house {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .input-house {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .form-new-property-apartment {
+      .input-repeat-apartment {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .input-apartment {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .form-new-property-land {
+      .input-repeat-land {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .input-land {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
 
