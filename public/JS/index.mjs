@@ -59,21 +59,24 @@ userMenu();
 // functions for new property
 import {
   selectFormNewProperty,
-  setLocalStorage,
+  inputChangeContainerMobilResponsive,
+  setInput,
 } from "./scripts/newProperty.mjs";
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
   if (currentPage === "/public/pages/new-property.html") {
+    setInput();
     const btnSelectNewProperty = document.querySelector(
       "#btn-select-new-property"
     );
     btnSelectNewProperty.addEventListener("click", () => {
       selectFormNewProperty();
     });
-    const btnFormNewProperty = document.querySelector("#btn-form-new-property");
-    btnFormNewProperty.addEventListener("click", () => {
-      setLocalStorage();
-    });
+    const btnFormNewPropertyHouse = document.querySelector(
+      "#btn-form-new-property-house"
+    );
+    btnFormNewPropertyHouse.addEventListener("click", () => {});
+    inputChangeContainerMobilResponsive();
   }
 });
 

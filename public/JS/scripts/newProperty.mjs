@@ -3,132 +3,173 @@ import { Maisons } from "../class/Maisons.mjs";
 import { Appartements } from "../class/Appartements.mjs";
 
 export function selectFormNewProperty() {
-  const formNewProperty = document.querySelector("#input-container");
-  const houseInputContainer = document.querySelector("#house-input-container");
-  const apartmentInputContainer = document.querySelector(
-    "#apartment-input-container"
+  const houseInputContainer = document.querySelector(
+    "#form-new-property-house"
   );
-  const landInputContainer = document.querySelector("#land-input-container");
-  const btnFormNewProperty = document.querySelector("#btn-form-new-property");
+  const apartmentInputContainer = document.querySelector(
+    "#form-new-property-apartment"
+  );
+  const landInputContainer = document.querySelector("#form-new-property-land");
+
+  const inputRepeatHouse = document.querySelector(".input-repeat-house");
+  const inputHouse = document.querySelector(".input-house");
+
+  const inputRepeatApartment = document.querySelector(
+    ".input-repeat-apartment"
+  );
+  const inputApartment = document.querySelector(".input-apartment");
 
   const selectValue = document.querySelector("#select-new-property").value;
+
   switch (selectValue) {
     case "house":
-      formNewProperty.style.display = "flex";
       houseInputContainer.style.display = "flex";
-      btnFormNewProperty.style.display = "block";
-
+      inputRepeatHouse.style.display = "flex";
       apartmentInputContainer.style.display = "none";
       landInputContainer.style.display = "none";
+      inputApartment.style.display = "none";
       break;
     case "apartment":
-      formNewProperty.style.display = "flex";
       apartmentInputContainer.style.display = "flex";
-      btnFormNewProperty.style.display = "block";
-
+      inputRepeatApartment.style.display = "flex";
       landInputContainer.style.display = "none";
       houseInputContainer.style.display = "none";
+      inputHouse.style.display = "none";
       break;
     case "land":
-      formNewProperty.style.display = "flex";
       landInputContainer.style.display = "flex";
-      btnFormNewProperty.style.display = "block";
-
       apartmentInputContainer.style.display = "none";
       houseInputContainer.style.display = "none";
+      inputHouse.style.display = "none";
+      inputApartment.style.display = "none";
       break;
     default:
       "house";
   }
 }
 
-function inputValue() {
-  const titleValue = document.querySelector("#title").value;
-  const descriptionValue = document.querySelector("#description").value;
-  const priceValue = document.querySelector("#price").value;
-  const locationValue = document.querySelector("#location").value;
-  const m2Value = document.querySelector("#m2").value;
-
-  const data = {
-    title: titleValue,
-    description: descriptionValue,
-    price: priceValue,
-    location: locationValue,
-    m2: m2Value,
-  };
-  return data;
-}
-function inputLandValue(data) {
-  const landValue = document.querySelector("#buildable").value;
-
-  const newLand = new Terrains(
-    data.title,
-    data.description,
-    data.price,
-    data.location,
-    data.m2,
-    landValue
+export function inputChangeContainerMobilResponsive() {
+  const inputRepeatHouse = document.querySelector(".input-repeat-house");
+  const inputHouse = document.querySelector(".input-house");
+  const btnChangeInputContainerHouse = document.querySelector(
+    "#change-input-container-house"
   );
-}
+  btnChangeInputContainerHouse.addEventListener("click", () => {
+    inputRepeatHouse.style.display = "none";
+    inputHouse.style.display = "flex";
+  });
+  const btnBackHouseRepeat = document.querySelector("#btn-back-house-repeat");
+  btnBackHouseRepeat.addEventListener("click", () => {
+    inputRepeatHouse.style.display = "flex";
+    inputHouse.style.display = "none";
+  });
 
-function inputHouseValue(data) {
-  const houseNumberOfRoomsValue = document.querySelector(
-    "#house-number-of-rooms"
-  ).value;
-  const numberOfStoriesValue =
-    document.querySelector("#number-of-stories").value;
-  const houseFurnishedValue = document.querySelector("#house-furnished").value;
-  const gardenValue = document.querySelector("#garden").value;
-  const poolValue = document.querySelector("#pool").value;
-  const newHouse = new Maisons(
-    data.title,
-    data.description,
-    data.price,
-    data.location,
-    data.m2,
-    houseNumberOfRoomsValue,
-    numberOfStoriesValue,
-    houseFurnishedValue,
-    gardenValue,
-    poolValue
+  const btnChangeInputContainerApartment = document.querySelector(
+    "#change-input-container-apartment"
   );
-}
-
-function inputApartmentValue(data) {
-  const floorsValue = document.querySelector("#floors").value;
-  const apartmentNumberOfRoomsValue = document.querySelector(
-    "#apartment-number-of-rooms"
-  ).value;
-  const elevatorValue = document.querySelector("#elevator").value;
-  const apartmentFurnishedValue = document.querySelector(
-    "#apartment-furnished"
-  ).value;
-  const balconyValue = document.querySelector("#balcony").value;
-  const newApartment = new Appartements(
-    data.title,
-    data.description,
-    data.price,
-    data.location,
-    data.m2,
-    floorsValue,
-    elevatorValue,
-    apartmentNumberOfRoomsValue,
-    apartmentFurnishedValue,
-    balconyValue
+  const inputRepeatApartment = document.querySelector(
+    ".input-repeat-apartment"
   );
+  const inputApartment = document.querySelector(".input-apartment");
+
+  btnChangeInputContainerApartment.addEventListener("click", () => {
+    inputRepeatApartment.style.display = "none";
+    inputApartment.style.display = "flex";
+  });
+  const btnBackApartmentRepeat = document.querySelector(
+    "#btn-back-apartment-repeat"
+  );
+  btnBackApartmentRepeat.addEventListener("click", () => {
+    inputRepeatApartment.style.display = "flex";
+    inputApartment.style.display = "none";
+  });
 }
 
-export function setLocalStorage() {
-  const selectValue = document.querySelector("#select-new-property").value;
-  switch (selectValue) {
-    case "house":
-      inputHouseValue(inputValue());
-      break;
-    case "apartment":
-      inputApartmentValue(inputValue());
-      break;
-    case "land":
-      inputLandValue(inputValue());
-      break;
-  }
+export function setInput() {
+  const formHouse = document.querySelector("#form-new-property-house");
+  formHouse.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formDataHouse = new FormData(formHouse);
+
+    const titleValue = formDataHouse.get("title");
+    const descriptionValue = formDataHouse.get("description");
+    const priceValue = formDataHouse.get("price");
+    const locationValue = formDataHouse.get("location");
+    const m2Value = formDataHouse.get("m2");
+
+    const numberOfRoomsValue = formDataHouse.get("numberOfRooms");
+    const numberOfStoriesValue = formDataHouse.get("numberOfStories");
+    const furnishedValue = formDataHouse.get("furnished");
+    const gardenValue = formDataHouse.get("garden");
+    const poolValue = formDataHouse.get("pool");
+
+    const newHouse = new Maisons(
+      titleValue,
+      descriptionValue,
+      priceValue,
+      locationValue,
+      locationValue,
+      m2Value,
+      numberOfRoomsValue,
+      numberOfStoriesValue,
+      furnishedValue,
+      gardenValue,
+      poolValue
+    );
+  });
+
+  const formApartment = document.querySelector("#form-new-property-apartment");
+  formApartment.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formDataApartment = new FormData(formApartment);
+
+    const titleValue = formDataApartment.get("title");
+    const descriptionValue = formDataApartment.get("description");
+    const priceValue = formDataApartment.get("price");
+    const locationValue = formDataApartment.get("location");
+    const m2Value = formDataApartment.get("m2");
+
+    const floorsValue = formDataApartment.get("floors");
+    const elevatorValue = formDataApartment.get("elevator");
+    const numberOfRoomsValue = formDataApartment.get("numberOfRooms");
+    const balconyValue = formDataApartment.get("balcony");
+    const furnishedValue = formDataApartment.get("furnished");
+
+    const newApartment = new Appartements(
+      titleValue,
+      descriptionValue,
+      priceValue,
+      locationValue,
+      m2Value,
+      floorsValue,
+      elevatorValue,
+      numberOfRoomsValue,
+      balconyValue,
+      furnishedValue
+    );
+  });
+
+  const formLand = document.querySelector("#form-new-property-land");
+  formLand.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formDataLand = new FormData(formLand);
+
+    const titleValue = formDataLand.get("title");
+    const descriptionValue = formDataLand.get("description");
+    const priceValue = formDataLand.get("price");
+    const locationValue = formDataLand.get("location");
+    const m2Value = formDataLand.get("m2");
+    const buildableValue = formDataLand.get("buildable");
+
+    const newLand = new Terrains(
+      titleValue,
+      descriptionValue,
+      priceValue,
+      locationValue,
+      m2Value,
+      buildableValue
+    );
+  });
 }

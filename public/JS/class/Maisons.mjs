@@ -32,40 +32,6 @@ export class Maisons extends BienImmobilier {
   }
 
   // setters & getters
-  // get numberOfRooms() {
-  //   return this.#numberOfRooms;
-  // }
-  // set numberOfRooms(numberOfRooms) {
-  //   this.#numberOfRooms = numberOfRooms;
-  // }
-
-  // get numberOfStories() {
-  //   return this.#numberOfStories;
-  // }
-  // set numberOfStories(numberOfStories) {
-  //   this.#numberOfStories = numberOfStories;
-  // }
-
-  // get furnished() {
-  //   return this.#furnished;
-  // }
-  // set furnished(furnished) {
-  //   this.#furnished = furnished;
-  // }
-
-  // get garden() {
-  //   return this.#garden;
-  // }
-  // set garden(garden) {
-  //   this.#garden = garden;
-  // }
-
-  // get pool() {
-  //   return this.#pool;
-  // }
-  // set pool(pool) {
-  //   this.#pool = pool;
-  // }
 
   //   methods
 
@@ -91,6 +57,4 @@ export class Maisons extends BienImmobilier {
     const dataStringify = JSON.stringify(getStorageParse);
     localStorage.setItem("products", dataStringify);
   }
-
-  setDescription() {}
 }

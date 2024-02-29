@@ -339,57 +339,6 @@ main .select-container select,
 main .select-container select option {
   text-transform: capitalize;
 }
-main .form-new-property-container {
-  position: relative;
-}
-main .form-new-property-container form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-}
-main .form-new-property-container form label {
-  color: white;
-  text-transform: capitalize;
-}
-main .form-new-property-container form input {
-  margin-bottom: 1rem;
-}
-main .form-new-property-container form button {
-  display: none;
-  position: absolute;
-  top: 112%;
-  right: 47%;
-  background-color: white;
-  border: 2px solid transparent;
-  color: black;
-  padding: 0.5rem 0.7rem;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-main .form-new-property-container form button:hover {
-  border: 2px solid black;
-  color: black;
-}
-main .form-new-property-container form .house-input-container,
-main .form-new-property-container form .apartment-input-container {
-  position: absolute;
-  top: 0;
-  right: 20%;
-}
-main .form-new-property-container form .input-container,
-main .form-new-property-container form .house-input-container,
-main .form-new-property-container form .apartment-input-container,
-main .form-new-property-container form .land-input-container {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 main .select-container {
   padding: 1rem;
 }
@@ -410,6 +359,75 @@ main .select-container button {
 main .select-container button:hover {
   border: 2px solid black;
   color: black;
+}
+main .form-new-property-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .form-new-property-container form {
+  width: 35%;
+}
+main .form-new-property-container form label {
+  color: white;
+  text-transform: capitalize;
+}
+main .form-new-property-container form input {
+  margin-bottom: 1rem;
+}
+main .form-new-property-container form button {
+  background-color: white;
+  border: 2px solid transparent;
+  color: black;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+main .form-new-property-container form button:hover {
+  border: 2px solid black;
+  color: black;
+}
+main .form-new-property-container .form-new-property-house,
+main .form-new-property-container .form-new-property-apartment,
+main .form-new-property-container .form-new-property-land {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .form-new-property-container .form-new-property-house .input-repeat-house {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .form-new-property-container .form-new-property-house .input-house {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+main .form-new-property-container .form-new-property-apartment .input-repeat-apartment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .form-new-property-container .form-new-property-apartment .input-apartment {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+main .form-new-property-container .form-new-property-land .input-repeat-land {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .form-new-property-container .form-new-property-land .input-land {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 main .cards-list-container {
   display: grid;
@@ -474,6 +492,15 @@ footer {
     display: none;
   }
   /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
+  main .form-new-property-container form .change-input-container-house {
+    display: none;
+  }
+  main .form-new-property-container form .change-input-apartment {
+    display: none;
+  }
+  main .form-new-property-container .form-new-property-house {
+    flex-direction: row;
+  }
   /*////////////////////////////////////FOOTER////////////////////////////////////////////*/
 }
 

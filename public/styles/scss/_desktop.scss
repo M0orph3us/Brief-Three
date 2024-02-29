@@ -53,8 +53,20 @@ header {
 }
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
 
-// main {
-
-// }
+main {
+  .form-new-property-container {
+    form {
+      .change-input-container-house {
+        display: none;
+      }
+      .change-input-apartment {
+        display: none;
+      }
+    }
+    .form-new-property-house {
+      flex-direction: row;
+    }
+  }
+}
 
 /*////////////////////////////////////FOOTER////////////////////////////////////////////*/
