@@ -37,7 +37,6 @@ eyeCloseRegister.addEventListener("click", showPasswordRegisterForm);
 // functions for users login
 import {
   login,
-  logout,
   showHidenLoginModal,
   createAdminBoard,
 } from "./scripts/login.mjs";
@@ -100,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const getData = localStorage.getItem(user);
       const getDataParse = JSON.parse(getData);
       if (getDataParse.isConnected === false) {
-        window.location.href = "/public/pages/home.html";
-        alert("Vous n'avez pas la permission");
+        window.location.href = "./home.html";
+        alert("You do not have permission to go to this page");
       }
     }
   }

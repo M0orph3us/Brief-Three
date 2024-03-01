@@ -74,7 +74,7 @@ export function createAdminBoard() {
       btnRegisterMobile.style.display = "none";
 
       const createAdminLinkDesktop = document.createElement("a");
-      createAdminLinkDesktop.href = "/public/pages/adminBoard.html";
+      createAdminLinkDesktop.href = "./adminBoard.html";
       createAdminLinkDesktop.classList.add("admin-link");
       createAdminLinkDesktop.textContent = "Admin Board";
 
@@ -89,7 +89,7 @@ export function createAdminBoard() {
         getDataParse.isConnected = false;
         const getDataStringify = JSON.stringify(getDataParse);
         localStorage.setItem(user, getDataStringify);
-        window.location.href = "/public/pages/home.html";
+        window.location.href = "./home.html";
       });
       btnContainerDesktopTarget.append(
         createAdminLinkDesktop,
@@ -97,7 +97,7 @@ export function createAdminBoard() {
       );
 
       const createAdminLinkMobile = document.createElement("a");
-      createAdminLinkMobile.href = "/public/pages/adminBoard.html";
+      createAdminLinkMobile.href = "./adminBoard.html";
       createAdminLinkMobile.classList.add("admin-link");
       createAdminLinkMobile.textContent = "Admin Board";
       const createLogoutMobile = document.createElement("i");
@@ -111,7 +111,7 @@ export function createAdminBoard() {
         getDataParse.isConnected = false;
         const getDataStringify = JSON.stringify(getDataParse);
         localStorage.setItem(user, getDataStringify);
-        window.location.href = "/public/pages/home.html";
+        window.location.href = "./home.html";
       });
 
       btnContainerMobileTarget.append(

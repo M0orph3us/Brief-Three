@@ -79,14 +79,14 @@ body {
 /*//////////////////////////////////// FONT-FAMILY ///////////////////////////////////////*/
 @font-face {
   font-family: "Poppins";
-  src: url("/public/assets/fonts/Poppins-Light.ttf");
+  src: url("../../assets/fonts/Poppins-Light.ttf");
 }
 
 /*//////////////////////////////////// BODY ////////////////////////////////////////////*/
 body {
   z-index: 1;
   font-family: "Poppins";
-  background-image: url("/public/assets/imgs/bcg-img.webp");
+  background-image: url("../../assets/imgs/bcg-img.webp");
   background-size: cover;
   background-position: center;
 }
