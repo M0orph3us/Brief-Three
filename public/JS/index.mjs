@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // function to prevent an unconnected user from accessing the admin page
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
+  console.log(currentPage);
   if (currentPage === "/public/pages/adminboard.html") {
     for (let k = 0; k < localStorage.length; k++) {
       const user = localStorage.key(k);
