@@ -560,6 +560,7 @@ footer .social-media-container i {
   }
   /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
   main {
+    flex: 1;
     /* Home page */
     /* new property page */
   }
