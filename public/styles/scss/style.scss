@@ -84,13 +84,21 @@ body {
 
 /*//////////////////////////////////// BODY ////////////////////////////////////////////*/
 body {
+  z-index: 1;
   font-family: "Poppins";
   background-image: url("/public/assets/imgs/bcg-img.webp");
   background-size: cover;
   background-position: center;
 }
 /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
-
+.admin-link {
+  padding: 5px 5px;
+  text-decoration: none;
+  background-color: #4bd3eb80;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 header {
   position: relative;
   padding: 1rem 2rem;
@@ -134,6 +142,7 @@ header {
     }
 
     .btn-connection {
+      z-index: 2;
       display: none;
 
       .btn-login-modal,
@@ -158,6 +167,7 @@ header {
 
   .register-modal,
   .login-modal {
+    z-index: 2;
     position: absolute;
     display: none;
   }
@@ -342,10 +352,55 @@ header {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
-  .cards-list-container {
+  /* Home page */
+
+  .cards-list-container,
+  .cards-list-default {
+    padding: 1rem;
+    margin: auto;
+    width: max-content;
     position: relative;
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    .card-container {
+      width: 100%;
+      background-color: #4bd3eb;
+      padding: 1rem;
+      border-radius: 25px;
+      border: 2px solid black;
+      &:hover {
+        box-shadow: 5px 5px 4px 0px;
+        transition: box-shadow 0.3s ease;
+      }
+
+      .container-description {
+        cursor: default;
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        background-color: #4bd3eb;
+        border-radius: 25px;
+        border: 2px solid black;
+        width: 70%;
+        height: auto;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .close-description {
+          cursor: pointer;
+          position: absolute;
+          top: 15%;
+          right: 5%;
+        }
+      }
+    }
   }
+
+  /* New property page */
   .select-container select,
   .select-container select option {
     text-transform: capitalize;
@@ -364,6 +419,7 @@ main {
   }
 
   .form-new-property-container {
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,6 +437,7 @@ main {
       button {
         @include template-btn(white, black, black, black);
         text-transform: uppercase;
+        margin-top: 1rem;
       }
     }
 
@@ -389,7 +446,7 @@ main {
     .form-new-property-land {
       display: none;
       flex-direction: column;
-      align-items: center;
+
       justify-content: center;
     }
 
@@ -420,6 +477,7 @@ main {
     }
 
     .form-new-property-land {
+      align-items: center;
       .input-repeat-land {
         display: flex;
         flex-direction: column;
@@ -436,7 +494,15 @@ main {
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 footer {
-  background-color: $navbar-bcg-color;
+  background-color: black;
+  padding: 1rem;
+
+  .social-media-container {
+    i {
+      color: white;
+      margin-right: 1rem;
+    }
+  }
 }
 
 /*/////////////////////////////// RESPONSIVE DESKTOP /////////////////////////////////////*/

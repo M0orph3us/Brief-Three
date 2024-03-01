@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="admin board for user" />
+    <meta name="description" content="Home page Have-a-Home" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -18,38 +18,71 @@
       type="text/css"
       href="/public/styles/css/style.css"
     />
-    <title>Admin Board</title>
+    <title>Home page</title>
   </head>
   <body>
     <header>
-      <i
-        class="fa-solid fa-bars fa-sm"
-        alt="open burger menu"
-        id="burger-open"
-      ></i>
-      <div class="logo-container">
-        <a href="/public/pages/home.html">
-          <img src="/public/assets/imgs/home.svg" alt="logo" class="logo" />
-        </a>
+      <div class="navbar">
+        <div class="logo">
+          <a href="/public/pages/home.html">
+            <img
+              src="/public/assets/imgs/logo.svg"
+              alt="logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <ul class="links">
+          <li><a href="/public/pages/home.html">home</a></li>
+          <li><a href="/public/pages/new-property.html">new property</a></li>
+        </ul>
+        <div class="btn-connection" id="btn-connection-desktop">
+          <button
+            type="button"
+            class="btn-login-modal"
+            id="btn-login-modal-desktop"
+          >
+            login
+          </button>
+          <button
+            type="button"
+            class="btn-register-modal"
+            id="btn-register-modal-desktop"
+          >
+            register
+          </button>
+        </div>
+        <i class="fa-solid fa-bars burger-menu-open" id="burger-menu-open"></i>
+        <i class="fa-solid fa-user user" id="user"></i>
       </div>
-      <div class="navbar-container" id="navbar-container">
-        <ul class="navbar" id="nabar">
+      <div class="burger-container" id="burger-container">
+        <i
+          class="fa-solid fa-x fa-sm burger-close"
+          alt="close burger menu"
+          id="burger-close"
+        ></i>
+        <ul>
           <li><a href="/public/pages/home.html">home</a></li>
           <li><a href="/public/pages/new-property.html">new property</a></li>
         </ul>
       </div>
-      <i
-        class="fa-solid fa-user fa-sm"
-        id="user-profil-icon"
-        alt="user options"
-      ></i>
-      <div class="profil-container" id="profil-container">
-        <ul>
-          <li class="login" id="login">login</li>
-          <li class="register" id="register">register</li>
-          <li class="adminboard-container" id="adminboard-container"></li>
-          <li class="logout-container" id="logout-container"></li>
-        </ul>
+      <div class="user-container" id="user-container">
+        <div class="btn-connection" id="btn-connection-mobile">
+          <button
+            type="button"
+            class="btn-login-modal"
+            id="btn-login-modal-mobile"
+          >
+            login
+          </button>
+          <button
+            type="button"
+            class="btn-register-modal"
+            id="btn-register-modal-mobile"
+          >
+            register
+          </button>
+        </div>
       </div>
       <div class="register-modal" id="register-modal">
         <form class="form-register" id="form-register" action="#" method="post">
@@ -58,6 +91,7 @@
             type="email"
             name="email-register"
             id="email-register"
+            class="email-register"
             required
           />
           <div class="password-register-container">
@@ -69,12 +103,12 @@
               required
             />
             <i
-              class="fa-solid fa-eye-slash fa-sm"
+              class="fa-solid fa-eye-slash fa-sm eye-close-register"
               alt="to show your password"
               id="eye-close-register"
             ></i>
             <i
-              class="fa-solid fa-eye fa-sm"
+              class="fa-solid fa-eye fa-sm eye-open-register"
               alt="to hide your password"
               id="eye-open-register"
             ></i>
@@ -88,23 +122,30 @@
               required
             />
             <i
-              class="fa-solid fa-eye-slash fa-sm"
+              class="fa-solid fa-eye-slash fa-sm eye-close-register2"
               alt="to show your password"
               id="eye-close-register2"
             ></i>
             <i
-              class="fa-solid fa-eye fa-sm"
+              class="fa-solid fa-eye fa-sm eye-open-register2"
               alt="to hide your password"
               id="eye-open-register2"
             ></i>
           </div>
-          <button type="button" id="btn-register">Register</button>
+          <button type="button" id="btn-register">register</button>
         </form>
       </div>
       <div class="login-modal" id="login-modal">
+        <i class="fa-solid fa-x close-login-modal" id="close-login-modal"></i>
         <form class="form-login" id="form-login" action="#" method="post">
           <label for="email-login">Email</label>
-          <input type="email" name="email-login" id="email-login" required />
+          <input
+            type="email"
+            name="email-login"
+            id="email-login"
+            class="email-login"
+            required
+          />
           <div class="password-login-container">
             <label for="password-login">Password</label>
             <input
@@ -114,31 +155,18 @@
               required
             />
             <i
-              class="fa-solid fa-eye-slash fa-sm"
+              class="fa-solid fa-eye-slash fa-sm eye-close-login"
               alt="to show your password"
               id="eye-close-login"
             ></i>
             <i
-              class="fa-solid fa-eye fa-sm"
+              class="fa-solid fa-eye fa-sm eye-open-login"
               alt="to hide your password"
               id="eye-open-login"
             ></i>
           </div>
           <button type="button" id="btn-login">Login</button>
         </form>
-      </div>
-      <div class="burger-container" id="burger-container">
-        <div class="burger-menu" id="burger-menu">
-          <i
-            class="fa-solid fa-x fa-sm"
-            alt="close burger menu"
-            id="burger-close"
-          ></i>
-          <ul>
-            <li><a href="/public/pages/home.html">home</a></li>
-            <li><a href="/public/pages/new-property.html">new property</a></li>
-          </ul>
-        </div>
       </div>
     </header>
     <main class="admin-container" id="admin-container"></main>

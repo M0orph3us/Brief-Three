@@ -79,6 +79,7 @@ body {
 }
 /*//////////////////////////////////// BODY ////////////////////////////////////////////*/
 body {
+  z-index: 1;
   font-family: "Poppins";
   background-image: url("/public/assets/imgs/bcg-img.webp");
   background-size: cover;
@@ -86,6 +87,15 @@ body {
 }
 
 /*//////////////////////////////////// HEADER ////////////////////////////////////////////*/
+.admin-link {
+  padding: 5px 5px;
+  text-decoration: none;
+  background-color: rgba(75, 211, 235, 0.5019607843);
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
 header {
   position: relative;
   padding: 1rem 2rem;
@@ -124,6 +134,7 @@ header .navbar .links li a:hover {
   color: #4bd3eb;
 }
 header .navbar .btn-connection {
+  z-index: 2;
   display: none;
 }
 header .navbar .btn-connection .btn-login-modal,
@@ -143,6 +154,7 @@ header .navbar .user {
 }
 header .register-modal,
 header .login-modal {
+  z-index: 2;
   position: absolute;
   display: none;
 }
@@ -334,10 +346,55 @@ header .user-container .btn-connection button:hover {
 /*//////////////////////////////////// MAIN //////////////////////////////////////////////*/
 main {
   flex: 1;
+  /* Home page */
+  /* New property page */
 }
-main .cards-list-container {
+main .cards-list-container,
+main .cards-list-default {
+  padding: 1rem;
+  margin: auto;
+  width: max-content;
   position: relative;
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+main .cards-list-container .card-container,
+main .cards-list-default .card-container {
+  width: 100%;
+  background-color: #4bd3eb;
+  padding: 1rem;
+  border-radius: 25px;
+  border: 2px solid black;
+}
+main .cards-list-container .card-container:hover,
+main .cards-list-default .card-container:hover {
+  box-shadow: 5px 5px 4px 0px;
+  transition: box-shadow 0.3s ease;
+}
+main .cards-list-container .card-container .container-description,
+main .cards-list-default .card-container .container-description {
+  cursor: default;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-color: #4bd3eb;
+  border-radius: 25px;
+  border: 2px solid black;
+  width: 70%;
+  height: auto;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main .cards-list-container .card-container .container-description .close-description,
+main .cards-list-default .card-container .container-description .close-description {
+  cursor: pointer;
+  position: absolute;
+  top: 15%;
+  right: 5%;
 }
 main .select-container select,
 main .select-container select option {
@@ -365,6 +422,7 @@ main .select-container button:hover {
   color: black;
 }
 main .form-new-property-container {
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -390,6 +448,7 @@ main .form-new-property-container form button {
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
+  margin-top: 1rem;
 }
 main .form-new-property-container form button:hover {
   border: 2px solid black;
@@ -400,7 +459,6 @@ main .form-new-property-container .form-new-property-apartment,
 main .form-new-property-container .form-new-property-land {
   display: none;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 main .form-new-property-container .form-new-property-house .input-repeat-house {
@@ -423,6 +481,9 @@ main .form-new-property-container .form-new-property-apartment .input-apartment 
   flex-direction: column;
   align-items: center;
 }
+main .form-new-property-container .form-new-property-land {
+  align-items: center;
+}
 main .form-new-property-container .form-new-property-land .input-repeat-land {
   display: flex;
   flex-direction: column;
@@ -436,7 +497,12 @@ main .form-new-property-container .form-new-property-land .input-land {
 
 /*//////////////////////////////////// FOOTER ////////////////////////////////////////////*/
 footer {
-  background-color: rgba(0, 0, 0, 0.2392156863);
+  background-color: black;
+  padding: 1rem;
+}
+footer .social-media-container i {
+  color: white;
+  margin-right: 1rem;
 }
 
 /*/////////////////////////////// RESPONSIVE DESKTOP /////////////////////////////////////*/
@@ -493,14 +559,59 @@ footer {
     display: none;
   }
   /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
-  main .form-new-property-container form .change-input-container-house {
-    display: none;
+  main {
+    /* Home page */
+    /* new property page */
   }
-  main .form-new-property-container form .change-input-apartment {
-    display: none;
+  main .cards-list-container,
+  main .cards-list-default {
+    grid-template-columns: repeat(6, 1fr);
   }
-  main .form-new-property-container .form-new-property-house {
+  main .new-property-container .select-container {
+    width: max-content;
+    margin: auto;
+  }
+  main .new-property-container .form-new-property-container {
+    position: relative;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-house {
     flex-direction: row;
+    gap: 2rem;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-house .change-input-container-house {
+    display: none;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-house .input-house {
+    display: flex;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-house .input-house .btn-form-new-property-house {
+    position: absolute;
+    bottom: -15%;
+    right: 47%;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-house .input-house .btn-back-house-repeat {
+    display: none;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-apartment {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-apartment .change-input-container-apartment {
+    display: none;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-apartment .input-apartment {
+    display: flex;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-apartment .input-apartment .btn-back-apartment-repeat {
+    display: none;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-apartment .input-apartment .btn-form-new-property-apartment {
+    position: absolute;
+    bottom: -15%;
+    right: 47%;
+  }
+  main .new-property-container .form-new-property-container .form-new-property-apartment .input-apartment .btn-back-apartment-repea {
+    display: none;
   }
   /*////////////////////////////////////FOOTER////////////////////////////////////////////*/
 }

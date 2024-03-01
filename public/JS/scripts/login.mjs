@@ -45,39 +45,80 @@ export function login() {
 }
 
 export function createAdminBoard() {
-  const adminBoardTarget = document.querySelector("#adminboard-container");
-  const logoutTarget = document.querySelector("#logout-container");
-  function getUserConnected() {
-    for (let k = 0; k < localStorage.length; k++) {
-      const user = localStorage.key(k);
-      const getData = localStorage.getItem(user);
-      const getDataParse = JSON.parse(getData);
-      if (getDataParse.isConnected === true) {
-        const userConnected = user;
-        return userConnected;
-      }
+  const btnContainerMobileTarget = document.querySelector(
+    "#btn-connection-mobile"
+  );
+  const btnContainerDesktopTarget = document.querySelector(
+    "#btn-connection-desktop"
+  );
+
+  const btnLoginDesktop = document.querySelector("#btn-login-modal-desktop");
+  const btnLoginMobile = document.querySelector("#btn-login-modal-mobile");
+
+  const btnRegisterDesktop = document.querySelector(
+    "#btn-register-modal-desktop"
+  );
+  const btnRegisterMobile = document.querySelector(
+    "#btn-register-modal-mobile"
+  );
+
+  for (let k = 0; k < localStorage.length; k++) {
+    const user = localStorage.key(k);
+    const getData = localStorage.getItem(user);
+    const getDataParse = JSON.parse(getData);
+    if (getDataParse.isConnected === true) {
+      btnLoginDesktop.style.display = "none";
+      btnLoginMobile.style.display = "none";
+
+      btnRegisterDesktop.style.display = "none";
+      btnRegisterMobile.style.display = "none";
+
+      const createAdminLinkDesktop = document.createElement("a");
+      createAdminLinkDesktop.href = "/public/pages/adminBoard.html";
+      createAdminLinkDesktop.classList.add("admin-link");
+      createAdminLinkDesktop.textContent = "Admin Board";
+
+      const createLogoutDesktop = document.createElement("i");
+      createLogoutDesktop.classList.add(
+        "fa-solid",
+        "fa-right-from-bracket",
+        "fa-xl"
+      );
+      createLogoutDesktop.style.cursor = "pointer";
+      createLogoutDesktop.addEventListener("click", () => {
+        getDataParse.isConnected = false;
+        const getDataStringify = JSON.stringify(getDataParse);
+        localStorage.setItem(user, getDataStringify);
+        window.location.href = "/public/pages/home.html";
+      });
+      btnContainerDesktopTarget.append(
+        createAdminLinkDesktop,
+        createLogoutDesktop
+      );
+
+      const createAdminLinkMobile = document.createElement("a");
+      createAdminLinkMobile.href = "/public/pages/adminBoard.html";
+      createAdminLinkMobile.classList.add("admin-link");
+      createAdminLinkMobile.textContent = "Admin Board";
+      const createLogoutMobile = document.createElement("i");
+      createLogoutMobile.classList.add(
+        "fa-solid",
+        "fa-right-from-bracket",
+        "fa-xl"
+      );
+      createLogoutMobile.style.cursor = "pointer";
+      createLogoutMobile.addEventListener("click", () => {
+        getDataParse.isConnected = false;
+        const getDataStringify = JSON.stringify(getDataParse);
+        localStorage.setItem(user, getDataStringify);
+        window.location.href = "/public/pages/home.html";
+      });
+
+      btnContainerMobileTarget.append(
+        createAdminLinkMobile,
+        createLogoutMobile
+      );
     }
-    return false;
-  }
-  if (getUserConnected() !== false) {
-    const linkAdminboard = document.createElement("a");
-    linkAdminboard.href = "/public/pages/adminboard.html";
-    linkAdminboard.classList.add("adminboard-link");
-    linkAdminboard.id = "adminboard-link";
-    linkAdminboard.textContent = "admin board";
-    adminBoardTarget.append(linkAdminboard);
-
-    const img = document.createElement("i");
-    img.classList.add("img-logout");
-    img.id = "img-logout";
-    img.classList.add("fa-solid fa-right-from-bracket");
-    img.alt = "icon logout";
-    logoutTarget.append(img);
-
-    const login = document.querySelector("#login");
-    login.remove();
-    const register = document.querySelector("#register");
-    register.remove();
   }
 }
 
@@ -88,8 +129,7 @@ export function logout() {
       const getData = localStorage.getItem(user);
       const getDataParse = JSON.parse(getData);
       if (getDataParse.isConnected === true) {
-        const userConnected = user;
-        return userConnected;
+        getDataParse.isConnected = false;
       }
     }
     return false;

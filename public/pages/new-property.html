@@ -36,14 +36,18 @@
           <li><a href="/public/pages/home.html">home</a></li>
           <li><a href="/public/pages/new-property.html">new property</a></li>
         </ul>
-        <div class="btn-connection">
-          <button type="button" class="btn-login-modal" id="btn-login-modal">
+        <div class="btn-connection" id="btn-connection-desktop">
+          <button
+            type="button"
+            class="btn-login-modal"
+            id="btn-login-modal-desktop"
+          >
             login
           </button>
           <button
             type="button"
             class="btn-register-modal"
-            id="btn-register-modal"
+            id="btn-register-modal-desktop"
           >
             register
           </button>
@@ -63,14 +67,18 @@
         </ul>
       </div>
       <div class="user-container" id="user-container">
-        <div class="btn-connection">
-          <button type="button" class="btn-login-modal" id="btn-login-modal">
+        <div class="btn-connection" id="btn-connection-mobile">
+          <button
+            type="button"
+            class="btn-login-modal"
+            id="btn-login-modal-mobile"
+          >
             login
           </button>
           <button
             type="button"
             class="btn-register-modal"
-            id="btn-register-modal"
+            id="btn-register-modal-mobile"
           >
             register
           </button>
@@ -168,17 +176,10 @@
             >Select the property you want to add</label
           >
           <select name="select-new-property" id="select-new-property">
-            <option value="house">house</option>
+            <option value="house" selected>house</option>
             <option value="apartment">apartment</option>
             <option value="land">land</option>
           </select>
-          <button
-            type="button"
-            class="btn-select-new-property"
-            id="btn-select-new-property"
-          >
-            select
-          </button>
         </div>
         <div class="form-new-property-container">
           <form
@@ -243,8 +244,18 @@
                 <option value="false">no</option>
               </select>
 
-              <button type="button" id="btn-back-house-repeat">back</button>
-              <button type="submit" id="btn-form-new-property-house">
+              <button
+                type="button"
+                id="btn-back-house-repeat"
+                class="btn-back-house-repeat"
+              >
+                back
+              </button>
+              <button
+                type="submit"
+                id="btn-form-new-property-house"
+                class="btn-form-new-property-house"
+              >
                 send
               </button>
             </div>
@@ -310,8 +321,18 @@
                 <option value="true">Yes</option>
                 <option value="false">No</option>
               </select>
-              <button type="button" id="btn-back-apartment-repeat">back</button>
-              <button type="submit" id="btn-form-new-property-apartment">
+              <button
+                type="button"
+                id="btn-back-apartment-repeat"
+                class="btn-back-apartment-repeat"
+              >
+                back
+              </button>
+              <button
+                type="submit"
+                id="btn-form-new-property-apartment"
+                class="btn-form-new-property-apartment"
+              >
                 send
               </button>
             </div>

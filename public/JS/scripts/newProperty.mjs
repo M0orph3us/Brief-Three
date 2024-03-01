@@ -3,49 +3,58 @@ import { Maisons } from "../class/Maisons.mjs";
 import { Appartements } from "../class/Appartements.mjs";
 
 export function selectFormNewProperty() {
-  const houseInputContainer = document.querySelector(
-    "#form-new-property-house"
-  );
-  const apartmentInputContainer = document.querySelector(
-    "#form-new-property-apartment"
-  );
-  const landInputContainer = document.querySelector("#form-new-property-land");
+  const select = document.querySelector("#select-new-property");
+  function updateForm() {
+    const houseInputContainer = document.querySelector(
+      "#form-new-property-house"
+    );
+    const inputRepeatHouse = document.querySelector(".input-repeat-house");
+    const inputHouse = document.querySelector(".input-house");
 
-  const inputRepeatHouse = document.querySelector(".input-repeat-house");
-  const inputHouse = document.querySelector(".input-house");
+    const apartmentInputContainer = document.querySelector(
+      "#form-new-property-apartment"
+    );
+    const inputRepeatApartment = document.querySelector(
+      ".input-repeat-apartment"
+    );
+    const inputApartment = document.querySelector(".input-apartment");
 
-  const inputRepeatApartment = document.querySelector(
-    ".input-repeat-apartment"
-  );
-  const inputApartment = document.querySelector(".input-apartment");
+    const landInputContainer = document.querySelector(
+      "#form-new-property-land"
+    );
 
-  const selectValue = document.querySelector("#select-new-property").value;
+    const selectValue = select.value;
 
-  switch (selectValue) {
-    case "house":
-      houseInputContainer.style.display = "flex";
-      inputRepeatHouse.style.display = "flex";
-      apartmentInputContainer.style.display = "none";
-      landInputContainer.style.display = "none";
-      inputApartment.style.display = "none";
-      break;
-    case "apartment":
-      apartmentInputContainer.style.display = "flex";
-      inputRepeatApartment.style.display = "flex";
-      landInputContainer.style.display = "none";
-      houseInputContainer.style.display = "none";
-      inputHouse.style.display = "none";
-      break;
-    case "land":
-      landInputContainer.style.display = "flex";
-      apartmentInputContainer.style.display = "none";
-      houseInputContainer.style.display = "none";
-      inputHouse.style.display = "none";
-      inputApartment.style.display = "none";
-      break;
-    default:
-      "house";
+    switch (selectValue) {
+      case "house":
+        houseInputContainer.style.display = "flex";
+        inputRepeatHouse.style.display = "flex";
+        if (window.screen.width < 1024) {
+          inputHouse.style.display = "none";
+        }
+        apartmentInputContainer.style.display = "none";
+        landInputContainer.style.display = "none";
+        break;
+      case "apartment":
+        apartmentInputContainer.style.display = "flex";
+        inputRepeatApartment.style.display = "flex";
+        if (window.screen.width < 1024) {
+          inputApartment.style.display = "none";
+        }
+        landInputContainer.style.display = "none";
+        houseInputContainer.style.display = "none";
+
+        break;
+      case "land":
+        landInputContainer.style.display = "flex";
+        apartmentInputContainer.style.display = "none";
+        houseInputContainer.style.display = "none";
+        break;
+      default:
+    }
   }
+  window.onload = updateForm;
+  select.addEventListener("change", updateForm);
 }
 
 export function inputChangeContainerMobilResponsive() {

@@ -37,7 +37,6 @@ header {
   .register-modal,
   .login-modal {
     width: 400px;
-    // border-radius: 5px;
   }
 
   .login-modal {
@@ -54,17 +53,59 @@ header {
 /*////////////////////////////////////MAIN//////////////////////////////////////////////*/
 
 main {
-  .form-new-property-container {
-    form {
-      .change-input-container-house {
-        display: none;
-      }
-      .change-input-apartment {
-        display: none;
-      }
+  /* Home page */
+  .cards-list-container,
+  .cards-list-default {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* new property page */
+  .new-property-container {
+    .select-container {
+      width: max-content;
+      margin: auto;
     }
-    .form-new-property-house {
-      flex-direction: row;
+    .form-new-property-container {
+      position: relative;
+      .form-new-property-house {
+        flex-direction: row;
+        gap: 2rem;
+        .change-input-container-house {
+          display: none;
+        }
+        .input-house {
+          display: flex;
+          .btn-form-new-property-house {
+            position: absolute;
+            bottom: -15%;
+            right: 47%;
+          }
+          .btn-back-house-repeat {
+            display: none;
+          }
+        }
+      }
+      .form-new-property-apartment {
+        flex-direction: row;
+        gap: 2rem;
+        .change-input-container-apartment {
+          display: none;
+        }
+        .input-apartment {
+          display: flex;
+          .btn-back-apartment-repeat {
+            display: none;
+          }
+          .btn-form-new-property-apartment {
+            position: absolute;
+            bottom: -15%;
+            right: 47%;
+          }
+          .btn-back-apartment-repea {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

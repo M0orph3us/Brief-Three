@@ -74,13 +74,8 @@ export function register() {
   ) {
     password = passwordRegisterValue;
     const newUser = new Users(emailRegisterValue, password);
-    if (newUser.checkUserMailExist()) {
-      const text = `An account with this email ${emailRegisterValue} address EE already exists`;
-      alert(text);
-    } else {
-      newUser.register();
-      const text = `Hello ${emailRegisterValue}, you're registered`;
-      alert(text, "valid");
-    }
+    newUser.register();
+    const text = `Hello ${emailRegisterValue}, you're registered`;
+    alert(text, "valid");
   }
 }

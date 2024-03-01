@@ -1,5 +1,4 @@
 "use strict";
-
 // To create the localStorage if it does not exist
 const checkLocalStorage = localStorage.getItem("products");
 if (checkLocalStorage === null) {
@@ -22,11 +21,15 @@ import {
 const btnRegister = document.querySelector("#btn-register");
 btnRegister.addEventListener("click", register);
 
-const btnRegisterModals = document.querySelectorAll("#btn-register-modal");
-const btnRegisterModalArray = [...btnRegisterModals];
-btnRegisterModalArray.forEach((btnRegisterModal) => {
-  btnRegisterModal.addEventListener("click", showRegisterModal);
-});
+const btnRegisterModalsDesktop = document.querySelector(
+  "#btn-register-modal-desktop"
+);
+btnRegisterModalsDesktop.addEventListener("click", showRegisterModal);
+
+const btnRegisterModalsMobile = document.querySelector(
+  "#btn-register-modal-mobile"
+);
+btnRegisterModalsMobile.addEventListener("click", showRegisterModal);
 
 const eyeCloseRegister = document.querySelector("#eye-close-register");
 eyeCloseRegister.addEventListener("click", showPasswordRegisterForm);
@@ -38,25 +41,36 @@ import {
   showHidenLoginModal,
   createAdminBoard,
 } from "./scripts/login.mjs";
-createAdminBoard();
-const btnLoginModals = document.querySelectorAll("#btn-login-modal");
-const btnLoginModalArray = [...btnLoginModals];
-btnLoginModalArray.forEach((btnLoginModal) => {
-  btnLoginModal.addEventListener("click", showHidenLoginModal);
-});
+
+const btnLoginModalsDesktop = document.querySelector(
+  "#btn-login-modal-desktop"
+);
+btnLoginModalsDesktop.addEventListener("click", showHidenLoginModal);
+const btnLoginModalsMobile = document.querySelector("#btn-login-modal-mobile");
+btnLoginModalsMobile.addEventListener("click", showHidenLoginModal);
 
 const btnLogin = document.querySelector("#btn-login");
 btnLogin.addEventListener("click", () => {
   login();
   createAdminBoard();
 });
+createAdminBoard();
 
 // functions for navbar
 import { burgerMenu, userMenu } from "./scripts/navbar.mjs";
 burgerMenu();
 userMenu();
 
-// functions for new property
+// functions for home page
+import { selectList } from "./scripts/home.mjs";
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname;
+  if (currentPage === "/public/pages/home.html") {
+    selectList();
+  }
+});
+
+// functions for new property page
 import {
   selectFormNewProperty,
   inputChangeContainerMobilResponsive,
@@ -66,12 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname;
   if (currentPage === "/public/pages/new-property.html") {
     setInput();
-    const btnSelectNewProperty = document.querySelector(
-      "#btn-select-new-property"
-    );
-    btnSelectNewProperty.addEventListener("click", () => {
-      selectFormNewProperty();
-    });
+
+    selectFormNewProperty();
+
     const btnFormNewPropertyHouse = document.querySelector(
       "#btn-form-new-property-house"
     );
@@ -90,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const getDataParse = JSON.parse(getData);
       if (getDataParse.isConnected === false) {
         window.location.href = "/public/pages/home.html";
+        alert("Vous n'avez pas la permission");
       }
     }
   }

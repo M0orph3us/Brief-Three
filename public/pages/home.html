@@ -36,14 +36,18 @@
           <li><a href="/public/pages/home.html">home</a></li>
           <li><a href="/public/pages/new-property.html">new property</a></li>
         </ul>
-        <div class="btn-connection">
-          <button type="button" class="btn-login-modal" id="btn-login-modal">
+        <div class="btn-connection" id="btn-connection-desktop">
+          <button
+            type="button"
+            class="btn-login-modal"
+            id="btn-login-modal-desktop"
+          >
             login
           </button>
           <button
             type="button"
             class="btn-register-modal"
-            id="btn-register-modal"
+            id="btn-register-modal-desktop"
           >
             register
           </button>
@@ -63,14 +67,18 @@
         </ul>
       </div>
       <div class="user-container" id="user-container">
-        <div class="btn-connection">
-          <button type="button" class="btn-login-modal" id="btn-login-modal">
+        <div class="btn-connection" id="btn-connection-mobile">
+          <button
+            type="button"
+            class="btn-login-modal"
+            id="btn-login-modal-mobile"
+          >
             login
           </button>
           <button
             type="button"
             class="btn-register-modal"
-            id="btn-register-modal"
+            id="btn-register-modal-mobile"
           >
             register
           </button>
@@ -162,19 +170,28 @@
       </div>
     </header>
     <main>
+      <div class="select-cards-list-container" id="select-cards-list-container">
+        <label for="select-cards-list">Search by product</label>
+        <select name="select-cards-list" id="select-cards-list">
+          <option value="allProducts" selected>All products</option>
+          <option value="houses">Houses</option>
+          <option value="apartments">Apartments</option>
+          <option value="lands">Lands</option>
+        </select>
+      </div>
+      <div class="cards-list-default" id="cards-list-default"></div>
       <div class="cards-list-container" id="cards-list-container"></div>
     </main>
     <footer>
       <div class="social-media-container">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-x-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-linkedin-in"></i>
+        <i class="fa-brands fa-facebook fa-xl"></i>
+        <i class="fa-brands fa-x-twitter fa-xl"></i>
+        <i class="fa-brands fa-instagram fa-xl"></i>
+        <i class="fa-brands fa-linkedin-in fa-xl"></i>
       </div>
     </footer>
   </body>
   <script type="module" src="/public/JS/index.mjs"></script>
-  <script type="module" src="/public/JS/scripts/home.mjs"></script>
   <!-- <script type="module" src="/public/JS/scripts/test.js"></script> -->
 </html>
 
